@@ -47,14 +47,36 @@
         </tr>
     </table>
 
-    <h2>Important Dates</h2>
-    <p> <b>November 2022:</b> Registration open<br> 
-        <b>December 2022:</b> Training data release for the Task 1<br> 
-        <b>End of April 2023:</b> Participant submissions<br> 
-        <b>May 2023:</b> Participant paper submissions<br> 
-        <b>June 2023:</b> Evaluation results release<br> 
-        <b>July 2023:</b> Camera ready paper submission<br> 
-        <b>September 2023:</b> CLEF Conference<br> 
-    </p>
+    <h1>Tasks</h1>
+    <p> In this first edition of the LongEval Lab, we look at the temporal persistence of the systems’ performance. In order to include the feature of temporal persistence as an additional quality for models proposed, participants are asked to suggest temporal IR systems (Task 1) and longitudinal text classifiers (Task 2) that generalize well beyond a train set generated within a limited time frame. </p>
+    <p> We consider two types of temporal persistence tasks: temporal information retrieval and longitudinal text classification. For each task, we look at a short-term and a long-term performance persistence. We aim to answer a high level question: </p>
+    <p> Given a longitudinal evolving benchmark for a typical NLP task, what types of models offer better temporal persistence over a short term and a long term? </p>
+    <p> The tasks organised in 2023 are: </p>
+
+    <h2> Task 1. LongEval-Retrieval: </h2>
+    <p> The goal of Task 1 is to propose a temporal information retrieval system which can handle changes over the time. The proposed retrieval system should follow the temporal persistence on Web documents.  </p>
+    <p> The organizers will provide a training set (queries, documents, qrels) created over a time frame up to a time t and two test sets: one test set (queries, documents) for a time frame [t,t’]  and one test set for a time frame [t’, t”], respectively for sub-tasks A and B. </p>
+    <p> <b>Sub-task short-term persistence.</b> In this task, participants will be asked to examine the retrieval effectiveness when the test documents are dated within a 3 months period from the documents available in the train collection. 
+    <p> Sub-task long-term persistence.</b> In this task, participants will be asked to examine retrieval effectiveness on the documents published after at least 3 months after the documents in the train collection were published. 
+
+    <h2>Task 2. LongEval-Classification: </h2> 
+    <p> The goal of Task 2 is to propose a temporal persistence classifier which can mitigate performance drop over short and long periods of time compared to a test set from the same time frame as training. </p> 
+    <p> Given a test set from the same time frame as training and evaluation sets from short/long time periods, the task is to design a classifier that can mitigate short/long term performance drops. </p>
+    <p> The organizers will provide a training set collected over a time frame up to a time t and two test sets: test set from time t and test set from time t+i where i=1 for sub-task A and i>1 for subtask B. </p>
+    <p> <b>Sub-task short-term persistence.</b> In this task, participants will be asked to develop models that demonstrate performance persistence over short periods of time (within 1 year from the training data).</p>
+    <p>Sub-task long-term persistence. In this task, participants will be asked to develop models that demonstrate performance persistence over a longer period of time (over 1 year apart from the training data).</p>
+
+    <h1>Evaluation</h1>
+    <h2>Task 1<h2>
+    <p> The performance of the submissions will be evaluated in two ways: </p>
+    <p>(1) ndcg scores on the testing set of the corresponding sub-task; </p>
+    <p>(2) Relative ndcg Drop (RnD) measured by computing the difference between ndcg on "within-period" data vs short- or long-term testing sets. <p>
+    <br>
+    <h2>Task 2:</h2>
+    <p>The performance of the submissions will be evaluated in two ways:</p>
+    <p>(1) Macro-averaged F1-score on the testing set of the corresponding sub-task;</p>
+    <p>(2) Relative Performance Drop (RPD) measured by computing the difference between performance on "within-period" data vs short- or long-term distant testing sets. </p>
+    <p>The submissions will be ranked based on the first metric of Macro-averaged F1. </p>
+    
 </body>
 </html>
