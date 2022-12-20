@@ -49,8 +49,21 @@
 
     <h1>Submissions</h1>
     <p>The submission system will be specified at a later time.</p>
+    <h2> Task 1. LongEval-Retrieval: </h2>
     <p>Task 1 will receive submissions Trec style. We also require participants to submit details about their models (software & library versions, parameter settings, hardware used, etc).</p>
-    <p>Participants are highly encouraged to participate in both subtasks. </p>
+    
+    <h2> Task 2. LongEval-Classification: </h2>
+    
+    <p> Participants are expected to propose temporally persistent classifiers based on state-of-the-art data-centric or architecture-centric computational methods. 
+    The goal is to achieve high weighted-F1 performance across short and long temporally distant test sets while maintaining a reasonable RPD when compared 
+    to a test set from the same time period as training. We intend to use <a href="https://huggingface.co/roberta-base">RoBERTa</a><br> as a baseline classifier
+    for our task because it has been <a href="https://www.sciencedirect.com/science/article/abs/pii/S0306457322003016"> demonstrated to be persistent over time </a>. </p>
+    
+    <p> All needed resources, including python-based baseline code, evaluation scripts, and un-labelled temporal data, will be made available to participating teams upon data release in January 2023. </p>
+    
+    <h3><p>The submissions for each sub-task will be ranked based on the first metric of macro-averaged F1. We encourage participants to contribute 
+        to both sub-tasks in order to be correctly placed on a
+        joint leader board, as well as to enable better analysis of their system performance in both settings. </p></h3>
 
 </body>
 </html>
