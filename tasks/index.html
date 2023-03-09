@@ -58,8 +58,13 @@
     <b>Objectives:</b> <br>
     <p>The goal of Task 1 is to propose an information retrieval system which can handle changes over the time. The proposed retrieval system should follow the timewise evolution of Web documents. The Longeval Websearch collection relies on a large set of data (corpus of pages, queries, user interaction) provided by a commercial search engine (Qwant). It is designed to reflect the changes of the Web across time, by providing evolving document and query sets. The queries in the collection were collected from Qwant's users over several months and can thus be expected to reflect the changes in the search preferences of the users. The documents in the collection were then selected to be able to well evaluate retrieval on these queries at the time they were collected, and thus also change over a time.</p>
     <p>The collection aims at answering fundamental questions on the robustness and the stability of Web search engines against the evolution of the data. Regarding Websearch evaluation, LongEval focuses on the following questions:</p>
-    <p>How does a search engine behave as the collection of documents available to it evolves? Such a question is especially important for commercial systems, as the satisfaction of users is central to such systems.</p>
-    <p>When do we need to update an IR system as the collection of documents to be searched in changes ? If we are able to assess the decrease in performance (if any) of a system on an evolving collection, we may then decide if the system needs to be updated.</p>
+    <ul>
+    <li>
+    How does a search engine behave as the collection of documents available to it evolves? Such a question is especially important for commercial systems, as the satisfaction of users is central to such systems.</p>
+    </li>
+    <li>When do we need to update an IR system as the collection of documents to be searched in changes ? If we are able to assess the decrease in performance (if any) of a system on an evolving collection, we may then decide if the system needs to be updated.
+    </li>
+    </p>
     <p>To assess an information retrieval system, we provide several datasets which are 3 snapshots of a changing Web documents and users’ queries:</p>
     <p>One <b>training set</b>, acquired at time <i>t1</i> (June 2022) composed of documents, queries, and qrels.
     <p>One heldout <b>within a time query set</b>, acquired at time <i>t1</i> (without assessments), dedicated to evaluate the quality of the information retrieval system on the corpus of documents acquired at t1. The output of running an IR system on this data will be used as a reference for the two sub-tasks (see below). This test set will be used to assess the initial performance of the trained models.</p>
