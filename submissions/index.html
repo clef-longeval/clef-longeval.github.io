@@ -59,18 +59,18 @@
     <p>
     Each system should be submitted in a single zipped file consisting of a following tuple:<br>
      <ul>
-    <li>system.WT</li>
-    <li>system.ST</li>
-    <li>system.LT</li>
-    <li>system.meta</li>
+    <li>team_system.WT</li>
+    <li>team_system.ST</li>
+    <li>team_system.LT</li>
+    <li>team_system.meta</li>
     </ul>
     </p>
     <p>
-    <b>System.WT</b> contains a run (a single TREC file) of the system on the Train heldout queries, used to measure within a time (WT) performance.<br>
-    <b>System.ST</b> contains a run (a single TREC file) of the system acquired on the Short Term Test queries.<br>
-    <b>System.LT</b> contains a run (a single TREC file) of the system acquired on the Long Term Test queries. <br>
+    <b>team_system.WT</b> contains a run (a single TREC file) of the system on the Train heldout queries, used to measure within a time (WT) performance.<br>
+    <b>team_system.ST</b> contains a run (a single TREC file) of the system acquired on the Short Term Test queries.<br>
+    <b>team_system.LT</b> contains a run (a single TREC file) of the system acquired on the Long Term Test queries. <br>
     Please note, that if the participants decide to only participate in the short-term or only in the long-term sub-task, then system.LT or system.ST respectively might be missing. However, the participants in all cases need to include system.WT and system.description files.<br>
-    <b>System.meta</b> contains a short description of the approach.This file should contain the information which indexing and ranking methods were applied, what type of training was applied and which training data were used. Please specify if you used statistical or neural approaches and if you used sparse or dense retrieval methods. Also, please include the information if the approach uses a single ranking approach, multiple-stages of rankers or any (and what) other type of fusion.<br>
+    <b>team_system.meta</b> contains a short description of the approach.This file should contain the information which indexing and ranking methods were applied, what type of training was applied and which training data were used. Please specify if you used statistical or neural approaches and if you used sparse or dense retrieval methods. Also, please include the information if the approach uses a single ranking approach, multiple-stages of rankers or any (and what) other type of fusion.<br>
     <p>All the files in a single zipped document should thus correspond to a single system. The name of this system should contain the name of the team and an unique identifier of this system. The suffix of each file should either be WT, ST, LT or meta. For example, if the file contains the submission of the BM25 system of the UGA team applied on the long-term task, the file name can be UGA_BM25.LT. </p>
 
     <h2> Task 2. LongEval-Classification: </h2>
