@@ -78,13 +78,35 @@
     
     <h2> Task 2. LongEval-Classification: </h2>
     
-    <p> Participants are expected to propose temporally persistent classifiers based on state-of-the-art data-centric or architecture-centric computational methods. 
+<!--     <p> Participants are expected to propose temporally persistent classifiers based on state-of-the-art data-centric or architecture-centric computational methods. 
     The goal is to achieve high weighted-F1 performance across short and long temporally distant test sets while maintaining a reasonable RPD when compared 
     to a test set from the same time period as training. We intend to use <a href="https://huggingface.co/roberta-base">RoBERTa</a> as a baseline classifier
     for our task because it has been demonstrated to be persistent over time. </p>
     
     <p> When the data is released in January 2023, all necessary resources, including python-based baseline code, evaluation scripts, and unlabeled temporal data, will be made available to participating teams. </p>
-    
+     -->
+    <b> <h3>Practice [Pre-Evaluation]</h3> </b>
+        <i> <b>You can access the <a href="https://codalab.lisn.upsaclay.fr/competitions/12762">COMPETITION HERE </a> and submit to <u>Practice</u> to evaluate your model and practice submittion process  </i> </b> <br> 
+        <b> You can download the training and practice sets from here: <a href="https://drive.google.com/file/d/1aWItzobrcw-DR4ZalMoJXDcL7yluOpGm/view?usp=sharing"> Training data with two temporal practice sets </a>  </b> <br>
+        <br><i><u><b> Submission format </b></u></i> <br> 
+        When submitting to Codalab, please submit a single zip file containing a folder called “submission”. This folder must contain THREE files:  <br> 
+        1. predicted_eval_within.txt (with within predictions - interim_eval_2016.json)  <br> 
+        2. predicted_eval_short.txt  (with distant predictions - interim_eval_2018.json)  <br> 
+        3. predicted_eval_long.txt   (a BLANK file which will be used for interim_eval_2021.json during the evaluation phase)
+        
+        <br>
+        <b> <h3>Evaluation</h3> </b> 
+        <i> <b>You can access the <a href="https://codalab.lisn.upsaclay.fr/competitions/12762"> COMPETITION HERE </a> and submit to <u>Evaluation</u> to evaluate your model and rank its performance  </i> </b> <br> 
+        <b> You can download the evaluation set from here: <a href="https://drive.google.com/file/d/1y_M91wI2mK5UrRx0nsyz_Y94jVsBjten/view?usp=sharing"> Three temporal evaluation sets without gold labels </a>  </b> <br>
+        <br><i><u><b> Submission format </b></u></i> <br> 
+        When submitting to Codalab, please submit a single zip file containing a folder called “submission”. This folder must contain THREE files:  <br> 
+        1. predicted_test_within.txt (with within predictions - interim_test_2016.json)  <br> 
+        2. predicted_test_short.txt  (with distant/short predictions - interim_test_2018.json)  <br> 
+        3. predicted_test_long.txt   (with distant/long predictions - interim_test_2021.json)  <br> 
+        
+        <b> <h3>Notes</h3> </b> 
+        <h5>  Use <a href="https://github.com/Rababalkhalifa/LongEval2023/blob/main/format_checker.py"> Format checking script </a> </b> for test your formatting and look into examples provided here: <a href="https://github.com/Rababalkhalifa/LongEval2023/blob/main/baseline_results.7z"> Baseline model results </a>  <h5>
+        
     <b>Note:</b>
     <p>The submissions for each sub-task will be ranked based on the first metric of macro-averaged F1. We encourage participants to contribute 
         to both sub-tasks in order to be correctly placed on a
