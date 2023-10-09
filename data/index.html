@@ -9,7 +9,7 @@
     <meta name="resource-type" content="document">
     <meta name="distribution" content="global">
     <meta name="KeyWords" content="Conference">
-    <title>LongEval 2023</title>
+    <title>LongEval 2024</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <div class="banner">
         <img src="https://clef-longeval.github.io/assets/banner.jpg" alt="Conference Template Banner">
         <div class="top-left">
-            <span class="title1">LongEval CLEF 2023 Lab</span>
+            <span class="title1">LongEval CLEF 2024 Lab</span>
         </div>
         <div class="bottom-right">
             Longitudinal Evaluation of Model Performance
@@ -44,6 +44,9 @@
             <td class="navigation">
                 <a title="Submissions" href="https://clef-longeval.github.io/submissions">Submissions</a>
             </td>
+            <td class="navigation">
+                <a title="2023" href="https://clef-longeval-2023.github.io/"> 2023</a>
+            </td>
         </tr>
     </table>
 
@@ -53,12 +56,12 @@
     <b>Data</b>
     <p>Queries:<br>The queries are extracted from Qwant’s search logs, based on a set of selected topics. The initial set of extracted queries are filtered to exclude spam and queries returning a small number of documents. The query set was created in French and was automatically translated to English.</p>
     <p>Documents:<br>The document collection first includes relevant documents that are selected to be retrieved for each query. The first step for creating the document collection is to extract from the index the content of all the documents that have been displayed in SERPs for the queries that we selected. In addition to these documents, potentially non-relevant documents are randomly sampled from Qwant index in order to better represent the nature of a Web test collection. A random sampling process has been applied to alleviate bias and prevalence of relevant documents. Filters have also been applied to exclude spam and adult content.</p>
-    <p>Relevance estimates:<br>The relevance estimates for LongEval-Retrieval are obtained through automatic collection of user implicit feedback. This implicit feedback is obtained with a click model, based on Dynamic Bayesian Networks trained on Qwant data. The output of the click model represents an attractiveness probability, which is turned to a 3-level scale score ( 0 = not relevant, 1 = relevant, 2 = highly relevant). This set of relevance estimates will be completed with explicit relevance assessment after the submission deadline. </p>
+    <p>Relevance estimates:<br>The relevance estimates for LongEval-Retrieval are obtained through automatic collection of user implicit feedback. This implicit feedback is obtained with a click model, based on Dynamic Bayesian Networks trained on Qwant data. The output of the click model represents an attractiveness probability, which is turned to a 3-level scale score (0 = not relevant, 1 = relevant, 2 = highly relevant). This set of relevance estimates will be completed with explicit relevance assessment after the submission deadline. </p>
     <p>The overview of the data creation process is displayed in the Figure below:</p>
     <p><img src="https://clef-longeval.github.io/assets/collection-process.png"></p>
     <br>
     <b>Train / Test collections (within a time train + heldout / short term / long term)</b>
-    <p>The training data and the heldout within a time query set can be downloaded from  <a href="http://hdl.handle.net/11234/1-5010">Lindat/Clarin website</a>. If you experience any problems with loggin to the Lindat/Clarin website, please first check <a href="https://lindat.mff.cuni.cz/en/how-do-i-sign-up">the instructions</a> and <a href="mailto:longeval-ir-task@univ-grenoble-alpes.fr">contact</a> the organizers. You can find the Readme with the details of the train collection <a href="https://docs.google.com/document/d/1Ozng4hXsvOKoF0j3w037i09WpIXfLMzZp1incsVhUP8/edit?usp=sharing">here</a>.</p>
+    <p>The training data can be downloaded from Lindat/Clarin website: <a href="http://hdl.handle.net/11234/1-5010">June, 2023 train set</a> and <a href="http://hdl.handle.net/11234/1-5139">July and August, 2023 test set</a>. If you experience any problems with loggin to the Lindat/Clarin website, please first check <a href="https://lindat.mff.cuni.cz/en/how-do-i-sign-up">the instructions</a> and <a href="mailto:longeval-ir-task@univ-grenoble-alpes.fr">contact</a> the organizers. You can find the Readme with the details of the train collection <a href="https://docs.google.com/document/d/1Ozng4hXsvOKoF0j3w037i09WpIXfLMzZp1incsVhUP8/edit?usp=sharing">here regarding June data</a> and <a href="https://docs.google.com/document/d/1xbW52276exB1jDkp90tqqcdHyR-hS2Hd_Tz_Ctnjz8I/edit?usp=sharing">here regarding July and August data</a></p>
     <p>Data in this collection was acquired during June 2022. The document corpus consist of 1,570,734 Web pages. The queries in this Train collection were randomly split into train and heldout queries. The collection consists of 672 train queries, with corresponding 9,656 assessments and 98 heldout queries with corresponding 1,420 assessments. There are thus in average 14 assessments per query. About 73% of the assessments are non-relevant (7,030 assessments on the train queries in total), 21% are relevant (2,028 assessments) and 6% are highly relevant (598 assessments). The table below shows example queries:</p>
     <p>
     <table>
