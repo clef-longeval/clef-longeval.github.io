@@ -67,25 +67,18 @@
     (1) How does a search engine behave as the collection of documents available to it evolves? Such a question is especially important for commercial systems, as the satisfaction of users is central to such systems.
     </li>
     <li>
-    (2) When do we need to update an IR system as the collection of documents to be searched in changes ? If we are able to assess the decrease in performance (if any) of a system on an evolving collection, we may then decide if the system needs to be updated.
+    (2) When do we need to update an IR system as the collection of documents to be searched in changes? If we are able to assess the decrease in performance (if any) of a system on an evolving collection, we may then decide if the system needs to be updated.
     </li>
     </ul>
     <p>To assess an information retrieval system, we provide several datasets which are 3 snapshots of a changing Web documents and users’ queries:</p>
     <ul>
     <li>
-        - <b>Training set</b>, acquired at time <i>t1 (June 2022), t2 (July 2022) and t3 (September 2022)</i>  composed of documents, queries, and qrels. These sets were used in the task in year 2023.
+        - <b>Training set</b>, acquired at <b>January 2023</b>  composed of documents, queries, and qrels.
     </li>
-    <li>
-    - One heldout <b>within a time query set</b>, acquired at time <i>t1</i> (without assessments), dedicated to evaluate the quality of the information retrieval system on the corpus of documents acquired at t1. The output of running an IR system on this data will be used as a reference for the two sub-tasks (see below). This test set will be used to assess the initial performance of the trained models.
-    </li>    
-    <li>- One <b>test set for sub-task A</b>, acquired at time t4, composed of documents and queries. </li>
-    <li>- One <b>test set for sub-task B</b>, acquired at time t5, composed of documents and queries.</li>
+    <li>- One <b>Lag 5 test set</b>, acquired at <b>June 2023</b>, composed of documents and queries. </li>
+    <li>- One <b>Lag 7 test set</b>, acquired at <b>August 2023</b>, composed of documents and queries.</li>
     </ul>
 
-    <b>Subtasks</b><br>
-    <p><b>Sub-task A, short-term persistence.</b> In this task, participants will be asked to examine the retrieval effectiveness when the test documents are dated right after the documents available in the train collection.</p>
-    <p><b>Sub-task B, long-term persistence.</b> In this task, participants will be asked to examine retrieval effectiveness on the documents published 3 months after the documents in the train collection were published.</p>
-    
     <h2>Task 2. LongEval-Classification: </h2> 
     
     <p> The goal of Task 2 is to propose a temporal persistence classifier which can mitigate performance drop over short and long periods of time compared to a test set from the same time frame as training. </p> 
@@ -98,8 +91,8 @@
     <h1>Evaluation</h1>
     <h2> Task 1. LongEval-Retrieval: </h2>
     <p> The submitted systems will be evaluated in two ways: </p>
-    <p>(1) <b><i>nDCG scores</i></b> calculated on a test set provided for the sub-tasks. Such a classical evaluation measure is consistent with Web search, for which the discount emphasises the ordering of the top results. </p>
-    <p>(2) <b><i>Relative nDCG Drop (RnD)</i></b> measured by computing the difference between nDCG on within a time heldout test data vs short- or long-term testing sets. This measure relies on the within a time data, and supports the evaluation of the impact of the data changes on the systems’ results. </p>
+    <p>(1) <b><i>nDCG scores</i></b> calculated on provided test sets. Such a classical evaluation measure is consistent with Web search, for which the discount emphasises the ordering of the top results. </p>
+    <p>(2) <b><i>Relative nDCG Drop (RnD)</i></b> measured by computing the difference between Lag5 and Lag7 test sets. This measure supports the evaluation of the impact of the data changes on the systems’ results. </p>
     <p>These measures will be used to assess the extent to which systems provide good results, but also the extent to which they are robust against the changes within the data (queries/documents) along time. Using these evaluation measures, a system that has good results using nDCG, and also good results according to the RnD measure is considered to be able to cope with the evolution over time of the Information Retrieval collection.</p>
 
     <br>
