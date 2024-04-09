@@ -55,25 +55,22 @@
     <p>Link: <a href="https://github.com/clef-longeval/IR-Participants.git">https://github.com/clef-longeval/IR-Participants.git</a></p>
     <p>Submissions will be done using git. Each team will have a private repository created by the organizers, which will be used to submit the runs to the task. The information about the repository is for each team provided by the organizers. Please contact the organizers if you did not receive this information. 
     <br><br>
-    All the participants can either participate in Sub-task A, short-term persistence, Sub-task B, long-term persistence, or both these sub-tasks. Participants can submit up to 5 systems applied to either one or both tasks. For each system submitted on either sub-task, the participants also need to submit the results acquired by this system on Train heldout queries which represent within a time benchmark estimate. This allows the organizers to acquire the information about the change of the system’s performance. Participants also need to provide a short description of each of the submitted systems.
+    All the participants need to provide results for each submitted system on both Lag5 and Lag7 test sets. This allows the organizers to acquire the information about the change of the system’s performance. Participants can submit up to 5 systems. Participants also need to provide a short description of each of the submitted systems.
     <br><br>
-    We further denote the submission of a single system on a single sub-task or on the within a time query set as the <b>run</b>. The individual runs need to be submitted in the TREC format. For each query in each run, it is allowed to return up to 1000 documents.
+    We further denote the submission of a single system as the <b>run</b>. The individual runs need to be submitted in the TREC format. For each query in each run, it is allowed to return up to 1000 documents.
     </p>
     <p>
     Each system should be submitted in a single zipped file consisting of a following tuple:<br>
      <ul>
-    <li>team_system.WT</li>
-    <li>team_system.ST</li>
-    <li>team_system.LT</li>
+    <li>team_system.lag5</li>
+    <li>team_system.lag7</li>
     <li>team_system.meta</li>
     </ul>
     </p>
     <p>
-    <b>team_system.WT</b> contains a run (a single TREC file) of the system on the Train heldout queries, used to measure within a time (WT) performance.<br>
-    <b>team_system.ST</b> contains a run (a single TREC file) of the system acquired on the Short Term Test queries.<br>
-    <b>team_system.LT</b> contains a run (a single TREC file) of the system acquired on the Long Term Test queries. <br>
-    Please note, that if the participants decide to only participate in the short-term or only in the long-term sub-task, then team_system.LT or team_system.ST respectively might be missing. However, the participants in all cases need to include team_system.WT and team_system.description files.<br>
-    <b>team_system.meta</b> contains a short description of the approach. This file should contain the information which indexing and ranking methods were applied, what type of training was applied and which training data were used. Please specify if you used statistical or neural approaches and if you used sparse or dense retrieval methods. Also, please include the information if the approach uses a single ranking approach, multiple-stages of rankers or any (and what) other type of fusion. Participants also need to describe if they used French data, provided English translations or their own translations and the resources (memory, GPUs, CPUs) used. Participants should use <a href="https://github.com/clef-longeval/IR-Participants/blob/9709a89dc59b093e9a6fd99a29666ae05ebf1c9e/Submissions/team_system.meta">this provided form</a> for filling all the system details.<br>
+    <b>team_system.lag5</b> contains a run (a single TREC file) of the system acquired on the Lag5 test collection.<br>
+    <b>team_system.lag7</b> contains a run (a single TREC file) of the system acquired on the Lag7 test collection.<br>
+    <b>team_system.meta</b> contains a short description of the approach. This file should contain the information which indexing and ranking methods were applied, what type of training was applied and which training data were used. Please specify if you used statistical or neural approaches and if you used sparse or dense retrieval methods. Also, please include the information if the approach uses a single ranking approach, multiple-stages of rankers or any (and what) other type of fusion. Participants also need to describe if they used French data, provided English translations, 1-best or n-best translations, or their own translations and the resources (memory, GPUs, CPUs) used. Participants should use <a href="https://github.com/clef-longeval/IR-Participants/blob/9709a89dc59b093e9a6fd99a29666ae05ebf1c9e/Submissions/team_system.meta">this provided form</a> for filling all the system details.<br>
     <p>All the files in a single zipped document should thus correspond to a single system. The name of this system should contain the name of the team and an unique identifier of this system. The suffix of each file should either be WT, ST, LT or meta. For example, if the file contains the submission of the BM25 system of the UGA team applied on the long-term task, the file name can be UGA_BM25.LT. </p>
 
     <p>Each system might be either run on French or English data (or their combination). The participants might also opt to use their own translations systems or even manual translations. 
