@@ -83,20 +83,38 @@
         as either “positive” or “negative”. The annotation is performed using distant supervision based on a manually curated list of
         emojis and <a href="https://arxiv.org/abs/2108.13898?context=cs.CL">emoticons</a> and, thus, can be easily extended to 
         cover more recent years. <br> <br> -->
-        
-    
-        <b> <h3>Practice [Pre-Evaluation]</h3> </b>
-        <i> <b>You can access the <a href="https://codalab.lisn.upsaclay.fr/competitions/12762">COMPETITION HERE </a> and submit to <u>Practice</u> to evaluate your model and practice submittion process  </i> </b> <br> 
+        we utilize and expand upon the Climate Change Twitter dataset , known as CC-SD, focusing on climate change stance, post time, and tweet content. 
+	    The CC-SD dataset spans a comprehensive 13-year period and encompasses over 15 million tweets from various years. Employing the BERT model, 
+	    tweets are annotated with three stance labels: believers, deniers, and neutral. The annotated tweets are distributed across the timeline, with 11,292,424 believers, 1,191,386 deniers, and 3,305,601 neutral tweets.
+	    Annotation is conducted using transfer learning with BERT as distant supervision, based on another sentiment climate change dataset, allowing for manual annotation to enhance precision.
+	    
+	 <b> <h3>Task 2. LongEval-Classification Datasets</h3> </b>
+	
+	The <u><b> train set </b></u> , spanning from 2009 to 2011, provides a comprehensive dataset for model training, sampled from CC-SD. It is not human annotated.
+
+	Task 2. LongEval-Classification Datasets will be released into two phases. 
+        <b> <h4>Practice [Pre-Evaluation]</h4> </b>
+
+	    <br> In the Practice phase, participants undertake pre-Evaluation tasks with datasets from 2010 and 2014, sampled from CC-SD, allowing them to practice within a recent time frame and over a short duration.
+	    These datasets are manually verified. Additionally, human-annotated "within time" and "short time" practice sets are provided, also sampled from CC-SD, to refine model development before formal evaluation. 
+	    <br><i><u><b> Practice Datasets </b></u></i> <br>
+	    <br> TBA
+<!--         <i> <b>You can access the <a href="https://codalab.lisn.upsaclay.fr/competitions/12762">COMPETITION HERE </a> and submit to <u>Practice</u> to evaluate your model and practice submittion process  </i> </b> <br> 
         <b> You can download the training and practice sets from here: <a href="https://drive.google.com/file/d/1aWItzobrcw-DR4ZalMoJXDcL7yluOpGm/view?usp=sharing"> Training data with two temporal practice sets </a>  </b> <br>
         <br><i><u><b> CodaLab Submission Format </b></u></i> <br> 
         When submitting to Codalab, please submit a single zip file containing a folder called “submission”. This folder must contain THREE files:  <br> 
         1. predicted_eval_within.txt (with within predictions - interim_eval_2016.json)  <br> 
         2. predicted_eval_short.txt  (with distant predictions - interim_eval_2018.json)  <br> 
-        3. predicted_eval_long.txt   (a BLANK file which will be used for interim_eval_2021.json during the evaluation phase)
+        3. predicted_eval_long.txt   (a BLANK file which will be used for interim_eval_2021.json during the evaluation phase) -->
         
         <br>
-        <b> <h3>Evaluation</h3> </b> 
-        <i> <b>You can access the <a href="https://codalab.lisn.upsaclay.fr/competitions/12762"> COMPETITION HERE </a> and submit to <u>Evaluation</u> to evaluate your model and rank its performance  </i> </b> <br> 
+        <b> <h4>Evaluation</h4> </b> 
+	    <br> The Evaluation phase assesses models using datasets from 2011, 2015, and the longer period of 2018-2019, all sampled from CC-SD. These datasets undergo manual verification and encompass within-timeframe assessments, short-term predictions, and long-term predictions, offering a holistic evaluation of model performance across various temporal contexts.
+	    By incorporating datasets covering different years, the evaluation ensures thorough testing and understanding of models' temporal persistence and performance.
+	    <br><i><u><b> Evaluation Datasets </b></u></i> <br>
+	    <br> TBA
+	    TBA
+<!--         <i> <b>You can access the <a href="https://codalab.lisn.upsaclay.fr/competitions/12762"> COMPETITION HERE </a> and submit to <u>Evaluation</u> to evaluate your model and rank its performance  </i> </b> <br> 
         <b> You can download the evaluation set from here: <a href="https://drive.google.com/file/d/1y_M91wI2mK5UrRx0nsyz_Y94jVsBjten/view?usp=sharing"> Three temporal evaluation sets without gold labels </a>  </b> <br>
         <b> Evaluation Golden Labeles released: <a href="https://github.com/Rababalkhalifa/LongEval2023/blob/main/evaluation-gold.zip"> Three temporal evaluation sets with gold labels </a>  </b> <br>
         <br><i><u><b> CodaLab Submission Format </b></u></i> <br> 
@@ -111,7 +129,7 @@
         <h4><b>Starting-kit:<b></h4>
         <b> Temporal data: <a href="http://tweetnlp.org/downloads/sample-10k-monthly-120k-yearly.jl.zip"> raw unlablled data </a> </b> <br>  
         <b> Example for reading temporal data: <a href="https://colab.research.google.com/drive/1gOwCqtRRNcYsNozRYeF_2pAl8VAoGulv?usp=sharing"> unlablled data </a> </b> <br>
-        <b> Example of submittion: <a href="https://github.com/Rababalkhalifa/LongEval2023/blob/main/baseline_results.7z"> model results </a>  </b> <br>
+        <b> Example of submittion: <a href="https://github.com/Rababalkhalifa/LongEval2023/blob/main/baseline_results.7z"> model results </a>  </b> <br> -->
        
         <br><h3> <b>  Good Luck! </b> </h3> <br> 
  <br> 
