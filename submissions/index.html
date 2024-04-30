@@ -53,28 +53,42 @@
     <h1>Submissions</h1>
     <h2> Task 1. LongEval-Retrieval: </h2>
     <p>Link: <a href="https://github.com/clef-longeval/IR-Participants.git">https://github.com/clef-longeval/IR-Participants.git</a></p>
-    <p>Submissions will be done using git. Each team will have a private repository created by the organizers, which will be used to submit the runs to the task. The information about the repository is for each team provided by the organizers. Please contact the organizers if you did not receive this information. 
-    <br><br>
-    All the participants need to provide results for each submitted system on both Lag5 and Lag7 test sets. This allows the organizers to acquire the information about the change of the system’s performance. Participants can submit up to 5 systems. Participants also need to provide a short description of each of the submitted systems.
-    <br><br>
-    We further denote the submission of a single system as the <b>run</b>. The individual runs need to be submitted in the TREC format. For each query in each run, it is allowed to return up to 1000 documents.
-    </p>
-    <p>
-    Each system should be submitted in a single zipped file consisting of a following tuple:<br>
-     <ul>
-    <li>team_system.lag5</li>
-    <li>team_system.lag7</li>
-    <li>team_system.meta</li>
-    </ul>
-    </p>
-    <p>
-    <b>team_system.lag5</b> contains a run (a single TREC file) of the system acquired on the Lag5 test collection.<br>
-    <b>team_system.lag7</b> contains a run (a single TREC file) of the system acquired on the Lag7 test collection.<br>
-    <b>team_system.meta</b> contains a short description of the approach. This file should contain the information which indexing and ranking methods were applied, what type of training was applied and which training data were used. Please specify if you used statistical or neural approaches and if you used sparse or dense retrieval methods. Also, please include the information if the approach uses a single ranking approach, multiple-stages of rankers or any (and what) other type of fusion. Participants also need to describe if they used French data, provided English translations, 1-best or n-best translations, or their own translations and the resources (memory, GPUs, CPUs) used. Participants should use <a href="https://github.com/clef-longeval/IR-Participants/blob/9709a89dc59b093e9a6fd99a29666ae05ebf1c9e/Submissions/team_system.meta">this provided form</a> for filling all the system details.<br>
-    <p>All the files in a single zipped document should thus correspond to a single system. The name of this system should contain the name of the team and an unique identifier of this system. The suffix of each file should either be lag5, lag7 or meta. For example, if the file contains the submission of the BM25 system of the UGA team applied on the lag5 collection, the file name can be UGA_BM25.lag5. </p>
 
-    <p>Each system might be either run on French or English data (or their combination). The participants might also opt to use their own translations systems or even manual translations. 
-    However, if <b>any manual intervention</b> is used, even for the translation, participants need to clearly state this in the system description.</p>
+    <p>Submissions will be done using through CodaLab compition, you can access <a href="https://codalab.lisn.upsaclay.fr/competitions/18739">COMPETITION HERE </a>.  Each team will need to participat in the competition and submit their runs through it. </p>
+    
+    <p>All the participants need to provide results for each submitted system on both Lag6 and Lag8 test sets. This allows the organizers to acquire the information about the change of the system&rsquo;s performance. Participants can submit up to 10 systems. Participants also need to provide a short description of each of the submitted systems.<br /><br />We further denote the submission of a single system as the&nbsp;<strong>run</strong>. The individual runs need to be submitted in the TREC format. For each query in each run, it is allowed to return up to 1000 documents.</p>
+    
+    <p>Each system should be submitted in a single zipped file consisting of a following tuple:</p>
+        <ul>
+        <li>team_system.lag6</li>
+        <li>team_system.lag8</li>
+        <li>team_system.meta</li>
+        </ul>
+
+    <p>&nbsp;</p>
+    
+    <p><strong>team_system.lag6</strong>&nbsp;contains a run (a single TREC file) of the system acquired on the Lag6 test collection.<br /><strong>team_system.lag8</strong>&nbsp;contains a run (a single TREC file) of the system acquired on the Lag8 test collection.<br /><strong>team_system.meta</strong>&nbsp;contains a short description of the approach. This file should contain the information which indexing and ranking methods were applied, what type of training was applied and which training data were used. Please specify if you used statistical or neural approaches and if you used sparse or dense retrieval methods. Also, please include the information if the approach uses a single ranking approach, multiple-stages of rankers or any (and what) other type of fusion. Participants also need to describe if they used French data, provided English translations, 1-best or n-best translations, or their own translations and the resources (memory, GPUs, CPUs) used. Participants should use&nbsp;<a href="https://github.com/clef-longeval/IR-Participants/blob/9709a89dc59b093e9a6fd99a29666ae05ebf1c9e/Submissions/team_system.meta">this provided form</a>&nbsp;for filling all the system details.</p>
+    
+    <p>All the files in a single zipped document should thus correspond to a single system. The name of this system should contain the name of the team and an unique identifier of this system. The suffix of each file should either be lag6, lag8 or meta. For example, if the file contains the submission of the BM25 system of the RSA_TU_UGA team applied on the lag6 collection, the file name can be<strong> RSA_TU_UGA_BM25.lag6</strong>.</p>
+        
+    <p>Each system might be either run on French or English data (or their combination). The participants might also opt to use their own translations systems or even manual translations. However, if&nbsp;<strong>any manual intervention</strong>&nbsp;is used, even for the translation, participants need to clearly state this in the system description.</p>
+        
+    <p>The submitted runs (i.e.&nbsp;<strong>team_system.lag6</strong>&nbsp;and<strong>&nbsp;<strong>team_system.lag8</strong></strong>) should follow the <a href="https://github.com/joaopalotti/trectools">TrecRun format</a>:</p>
+        
+    <p dir="auto">qid Q0 docno rank score tag</p>
+        
+    <p dir="auto">where:</p>
+        
+    <ul dir="auto">
+        <li><span>qid</span>&nbsp;is the query number</li>
+        <li><span>Q0</span>&nbsp;is the literal Q0</li>
+        <li><span>docno</span>&nbsp;is the id of a document returned for qid</li>
+        <li><span>rank</span>&nbsp;(1-999) is the rank of this response for this qid</li>
+        <li><span>score</span>&nbsp;is a system-dependent indication of the quality of the response</li>
+        <li><span>tag</span>&nbsp;is the identifier for the system</li>
+    </ul>
+        
+    <p dir="auto">Example:<br />1 Q0 nhslo3844_12_012186 1 1.73315273652 mySystem<br />1 Q0 nhslo1393_12_003292 2 1.72581054377 mySystem<br />1 Q0 nhslo3844_12_002212 3 1.72522727817 mySystem<br />1 Q0 nhslo3844_12_012182 4 1.72522727817 mySystem<br />1 Q0 nhslo1393_12_003296 5 1.71374426875 mySystem</p>
     
     <h2> Task 2. LongEval-Classification: </h2>
 
