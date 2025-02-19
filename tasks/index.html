@@ -9,7 +9,7 @@
     <meta name="resource-type" content="document">
     <meta name="distribution" content="global">
     <meta name="KeyWords" content="Conference">
-    <title>LongEval 2024</title>
+    <title>LongEval 2025</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <div class="banner">
         <img src="https://clef-longeval.github.io/assets/banner.jpg" alt="Conference Template Banner">
         <div class="top-left">
-            <span class="title1">LongEval CLEF 2024 Lab</span>
+            <span class="title1">LongEval CLEF 2025 Lab</span>
         </div>
         <div class="bottom-right">
             Longitudinal Evaluation of Model Performance
@@ -45,7 +45,8 @@
                 <a title="Submissions" href="https://clef-longeval.github.io/submissions">Submissions</a>
             </td>
             <td class="navigation">
-                <a title="2023" href="https://clef-longeval-2023.github.io/"> 2023</a>
+                <a title="2024" href="https://clef-longeval.github.io/">2024</a>
+                <a title="2023" href="https://clef-longeval-2023.github.io/">2023</a>
             </td>
         </tr>
     </table>
@@ -70,18 +71,22 @@
     (2) When do we need to update an IR system as the collection of documents to be searched in changes? If we are able to assess the decrease in performance (if any) of a system on an evolving collection, we may then decide if the system needs to be updated.
     </li>
     </ul>
-    <p>To assess an information retrieval system, we provide several datasets which are 3 snapshots of a changing Web documents and users’ queries:</p>
+    <p>To assess an information retrieval system, we provide several datasets which are snapshots of changing Web documents and users’ queries over a period of 15 months:</p>
     <ul>
     <li>
-        - <b>Training set</b>, acquired at <b>January 2023</b>  composed of documents, queries, and qrels.
+        - <b>Training set</b>, acquired from <b>June 2022 to February 2023</b>, composed of documents, queries, and qrels.
     </li>
-    <li>- <b>Lag 5 test set</b>, acquired at <b>June 2023</b>, composed of documents and queries. </li>
-    <li>- <b>Lag 7 test set</b>, acquired at <b>August 2023</b>, composed of documents and queries.</li>
+    <li>- <b>Test set 1</b>, acquired in <b>March 2023</b>, composed of documents and queries. </li>
+    <li>- <b>Test set 2</b>, acquired in <b>April 2023</b>, composed of documents and queries.</li>
+    <li>- <b>Test set 3</b>, acquired in <b>May 2023</b>, composed of documents and queries.</li>
+    <li>- <b>Test set 4</b>, acquired in <b>June 2023</b>, composed of documents and queries.</li>
+    <li>- <b>Test set 5</b>, acquired in <b>July 2023</b>, composed of documents and queries.</li>
+    <li>- <b>Test set 6</b>, acquired in <b>August 2023</b>, composed of documents and queries.</li>
     </ul>
 
     <h2>Task 2. LongEval-Classification: </h2> 
     
-    <p>The goal of LongEval-Classification Subtask B of CLEF 2024 Task 2 is to propose a temporal persistence classifier which can mitigate performance drop over short and long periods of time compared to a test set from the same time frame as training.</p>
+    <p>The goal of LongEval-Classification Subtask B of CLEF 2025 Task 2 is to propose a temporal persistence classifier which can mitigate performance drop over short and long periods of time compared to a test set from the same time frame as training.</p>
     <p>The organizers will provide a training set collected over a time frame up to a time t and two test sets: test set from time t and test set from time t+i where i=1 for sub-task A and i>1 for subtask B. </p>
     <p> <b>Sub-task short-term persistence.</b> Short-term persistence. In this sub-task participants will develop models which demonstrate performance persistence over short periods of time, i.e. using test set within 2-3 years apart from the training data.
     <p> <b>Sub-task long-term persistence.</b> Long-term persistence. In this sub-task participants will develop models which demonstrate performance persistence over longer period of time, i.e. test set within 4-5 years apart from the training data and also distant from the short-term test set.
