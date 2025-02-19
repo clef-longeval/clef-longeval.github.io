@@ -9,7 +9,7 @@
     <meta name="resource-type" content="document">
     <meta name="distribution" content="global">
     <meta name="KeyWords" content="Conference">
-    <title>LongEval 2024</title>
+    <title>LongEval 2025</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <div class="banner">
         <img src="https://clef-longeval.github.io/assets/banner.jpg" alt="Conference Template Banner">
         <div class="top-left">
-            <span class="title1">LongEval CLEF 2024 Lab</span>
+            <span class="title1">LongEval CLEF 2025 Lab</span>
         </div>
         <div class="bottom-right">
             Longitudinal Evaluation of Model Performance
@@ -45,7 +45,8 @@
                 <a title="Submissions" href="https://clef-longeval.github.io/submissions">Submissions</a>
             </td>
             <td class="navigation">
-                <a title="2023" href="https://clef-longeval-2023.github.io/"> 2023</a>
+                <a title="2024" href="https://clef-longeval.github.io/">2024</a>
+                <a title="2023" href="https://clef-longeval-2023.github.io/">2023</a>
             </td>
         </tr>
     </table>
@@ -54,61 +55,50 @@
     <b><h2>  Task 1. LongEval-Retrieval </h2> </b>    
     <p>The data for this task is a sequence of web document collections and queries provided by Qwant.</p>
     <b>Description of the Data</b>
-    <p><b>Queries:</b><br>The queries are extracted from Qwant’s search logs, based on a set of selected topics. The query set was created in French and was automatically translated to English. To deal with the translation quality, 4 translations are provided for each query, sorted by their estimated translation probability.</p>
-    <p><b>Documents:</b><br>The document collection includes documents that are selected to be retrieved for each query. The first step for creating the document collection is to extract from the index the content of all the documents that have been displayed in SERPs for the queries that we selected. In addition to these documents, potentially non-relevant documents are randomly sampled from Qwant index in order to better represent the nature of a Web test collection. A random sampling process has been applied to alleviate bias and prevalence of relevant documents. Filters were applied to exclude spam and adult content.</p>
+    <p><b>Queries:</b><br>The queries are extracted from Qwant’s search logs, based on a set of selected topics. The query set was created in French.</p>
+    <p><b>Documents:</b><br>The document collection includes all documents that have been displayed in SERPs for the selected queries. Filters were applied to exclude adult content from the collection. A collection.db file (SQLite) is provided to the participants with the mapping of the entire collection (URLs) to the document IDs. This mapping ensures that every document has its own unique ID across the whole collection. The structure of the table 'mapping' is as follows:</p>
+    <pre>
+    (0, 'id', 'INTEGER', 0, None, 1)
+    (1, 'url', 'TEXT', 0, None, 0)
+    (2, 'last_updated_at', 'TEXT', 0, None, 0)
+    (3, 'date', 'TEXT', 0, None, 0)
+    </pre>
+    <p>Record with ID 1:</p>
+    <pre>
+    {
+        "id": 1,
+        "url": "https://www.blogduvoyage.fr/roadtrip-usa-conseils/",
+        "last_updated_at": [
+            1640160479,
+            1640160479
+        ],
+        "date": [
+            "2022-06",
+            "2022-06"
+        ]
+    }
+    </pre>
+    <p>Participants can check detailed information of the document, such as when it was last updated and where the document is located.</p>
     <p><b>Relevance estimates:</b><br>The relevance estimates for LongEval-Retrieval are obtained through automatic collection of user implicit feedback. This implicit feedback is obtained with a click model, based on Dynamic Bayesian Networks trained on Qwant data. The output of the click model represents an attractiveness probability, which is turned to a 3-level scale score (0 = not relevant, 1 = relevant, 2 = highly relevant). This set of relevance estimates will be completed with explicit relevance assessment after the submission deadline. </p>
     <p>The overview of the data creation process is displayed in the Figure below:</p>
     <p><img src="https://clef-longeval.github.io/assets/collection-process.png"></p>
     <br>
     <b>Collections</b>
-	<p>Participants to LongEval 2024 can use the LongEval 2023 for training as well.<br>
-	    <ul>
-			<li> - <b>2023 Training set:</b> composed of documents collected in <a href="http://hdl.handle.net/11234/1-5010">June 2022, queries, and qrels</a> (on the Lindat/Clarin website).</li>
-			<li> - <b>2023 Test set:</b> composed of documents collected in <a href="http://hdl.handle.net/11234/1-5139">July and September 2022, queries</a>, and, separately, <a href="http://hdl.handle.net/11234/1-5151">the qrels</a> (both datasets on the Lindat/Clarin website).</li>
-			<li> - <b>2024 Training set:</b> composed of documents collected in <a href="https://doi.org/10.48436/y60e9-k9b51">January 2023, queries, and qrels</a> (on the TU Wien Research Data Repository).</li>
-			<li>-  <b>2024 Test Set:</b> composed of documents collected in <a href="https://researchdata.tuwien.ac.at/records/xr350-79683">June and August 2023, queries</a> (on the TU Wien Research Data Repository).</li>
-            <li>-  <b>2024 DocID to url mapping:</b> composed of list of document ids for each of the Training test and Test sets document id to url of the document source  <a href="https://owncloud.tuwien.ac.at/index.php/s/4GDD7TgMqEcLazS">January 2023</a>, <a href="https://owncloud.tuwien.ac.at/index.php/s/oUeaVEEM2RPseNT">June 2023</a>, and <a href="https://owncloud.tuwien.ac.at/index.php/s/LuKqOHWoUqxoqNo">August 2023</a>.</li>
-
-    </ul>
+    <p>The full collection is provided and processed to map queries and documents with unique IDs. It is recommended not to use the previous collections from 2023 and 2024 for training.</p>
+    <p>The purpose of providing the full collection without too much sampling is to give participants full freedom and to provide the IR community with a comprehensive collection for future testing of their methods.</p>
+    <p>The figure below shows the overlap of documents across the full collection:</p>
+    <p><img src="https://clef-longeval.github.io/assets/confusion_matrix.png" alt="Document Overlap Confusion Matrix"></p>
 	
-    <p> If you experience any problems with loggin to the Lindat/Clarin website, please first check <a href="https://lindat.mff.cuni.cz/en/how-do-i-sign-up">the instructions</a> and <a href="mailto:longeval-ir-task@univ-grenoble-alpes.fr">contact</a> the organizers. </p>
+    <p> If you experience any problems with logging into the Lindat/Clarin website, please first check <a href="https://lindat.mff.cuni.cz/en/how-do-i-sign-up">the instructions</a> and <a href="mailto:longeval-ir-task@univ-grenoble-alpes.fr">contact</a> the organizers. </p>
     <br>
     <b>References:</b><br> 
     <p>More details about the collection can be found in a paper:
     P. Galuscakova, R. Deveaud, G. Gonzalez-Saez, P. Mulhem, L. Goeuriot, F. Piroi, M. Popel: <a href="https://arxiv.org/abs/2303.03229">LongEval-Retrieval: French-English Dynamic Test Collection for Continuous Web Search Evaluation</a>. 
     </p>
-    <b><h2> Task 2. LongEval-Classification </h2></b>
-	
-        In this edition of the task, we utilize and expand upon the Climate Change Twitter dataset , known as CC-SD, focusing on climate change stance, post time, and tweet content. 
-	    The CC-SD dataset spans a comprehensive 13-year period and encompasses over 15 million tweets from various years. Employing the BERT model, 
-	    tweets are annotated with three stance labels: believers, deniers, and neutral. The annotated tweets are distributed across the timeline, with 11,292,424 believers, 1,191,386 deniers, and 3,305,601 neutral tweets.
-	    Annotation is conducted using transfer learning with BERT as distant supervision, based on another sentiment climate change dataset, allowing for manual annotation to enhance precision.
-	    
-	 <b> <h3>Task 2. LongEval-Classification Datasets</h3> </b>
-	
-	The <b> <a href="https://drive.google.com/file/d/1HHL7Hub56XXtWRrbhCex5CMu_BNavRkb/view?usp=sharing"> train set </a> </b> , spanning from 2009 to 2011, provides a comprehensive dataset for model training, sampled from CC-SD. It is not human annotated.
-
-	<b> <h4> Task 2. LongEval-Classification Datasets will be released into two phases. </h4> </b>
-        <b> <h4>Practice [Pre-Evaluation] Phase</h4> </b>
-
-	In the Practice phase, participants undertake pre-Evaluation tasks with datasets from 2010 and 2014, sampled from CC-SD, allowing them to practice within a recent time frame and over a short duration.
-	These datasets are manually verified. Additionally, human-annotated <b>within-time</b> and <b>short-term</b> practice sets are provided, also sampled from CC-SD, to refine model development before formal evaluation. 
-	<br>
-	<br><i><u><b> Practice Datasets </b></u></i> <br>	
-	 <a href="https://drive.google.com/file/d/1465bnuPJcstFhxV1A6HIWvISCShxIAnk/view?usp=sharing"> Practice sets</a>: within-practice and short-practice
-
-	    
-        <b> <h4>Evaluation Phase</h4> </b> 
-	    
-	The Evaluation phase assesses models using datasets from 2011, 2015, and the longer period of 2018-2019, all sampled from CC-SD. These datasets undergo manual verification and encompass <b>within-time</b> predictions,
-	<b>short-term</b> predictions, and <b>long-term</b> predictions, offering a holistic evaluation of model performance across various temporal contexts.
-	By incorporating datasets covering different years, the evaluation ensures thorough testing and understanding of models' temporal persistence and performance.
-	<br>    
-	<br><i><u><b> Evaluation Datasets </b></u></i> <br>
-<!-- 	 <a href="https://drive.google.com/file/d/1F8iHWdowvvGVPTmWk-hkrOrKyj2Wv1Be/view?usp=sharing"> Testing Evaluation sets (no-labels) </a> -->
-	 <a href="https://drive.google.com/drive/folders/16eWJsSJB2rSptjb_2pZE30rH61BmbGd_?usp=sharing"> Testing Evaluation sets (gold-labels) </a>
-        <br><h3> <b>  Good Luck! </b> </h3> <br> 
-	
+    
+    <b><h2> Task 2. CORE </h2></b>
+    <p>Details about the new CORE task will be provided soon.</p>
+    
  <br> 
 </body>
 </html>
