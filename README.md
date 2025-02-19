@@ -1,6 +1,6 @@
-# LongEval 2025 - French Dataset
+# LongEval 2025
 
-This repository contains the **French dataset** for the **LongEval 2025 Information Retrieval Challenge**.  
+This repository instruction about the **Collection (French original Language)** for the **LongEval 2025 Information Retrieval Challenge**.  
 The dataset supports **training and evaluation** in **Information Retrieval (IR)** tasks.
 
 🔗 **Official Challenge Website**: [LongEval 2025](https://clef-longeval.github.io/)
