@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
 
-
 <head>
     <base href=".">
     <link rel="shortcut icon" type="image/png" href="https://clef-longeval.github.io/assets/favicon.png"/>
@@ -10,7 +9,7 @@
     <meta name="resource-type" content="document">
     <meta name="distribution" content="global">
     <meta name="KeyWords" content="Conference">
-    <title>LongEval 2025</title>
+    <title>LongEval 2024</title>
 </head>
 
 <body>
@@ -18,41 +17,42 @@
     <div class="banner">
         <img src="https://clef-longeval.github.io/assets/banner.jpg" alt="Conference Template Banner">
         <div class="top-left">
-            <span class="title1">LongEval CLEF 2025 Lab</span>
+            <span class="title1">LongEval CLEF 2024 Lab</span>
         </div>
         <div class="bottom-right">
             Longitudinal Evaluation of Model Performance
         </div>
     </div>
+
     <table class="navigation">
         <tr>
             <td class="navigation">
-                <a title="description" href="https://clef-longeval.github.io/">Description</a>
+                <a title="description" href="https://clef-longeval.github.io/2024">Description</a>
             </td>
             <td class="navigation">
-                <a title="Dates" href="https://clef-longeval.github.io/dates">Dates</a>
+                <a title="Dates" href="https://clef-longeval.github.io/2024/dates">Dates</a>
             </td>
             <td class="navigation">
-                <a title="Organizers" href="https://clef-longeval.github.io/organizers">Organizers</a> 
+                <a title="Organizers" href="https://clef-longeval.github.io/2024/organizers">Organizers</a> 
             </td>
             <td class="navigation">
-                <a title="Tasks" href="https://clef-longeval.github.io/tasks">Tasks</a>
+                <a title="Tasks" href="https://clef-longeval.github.io/2024/tasks">Tasks</a>
             </td>
             <td class="navigation">
-                <a class="current" title="Data" href="https://clef-longeval.github.io/data">Data</a>
+                <a class="current" title="Data" href="https://clef-longeval.github.io/2024/data">Data</a>
             </td>
             <td class="navigation">
-                <a title="Submissions" href="https://clef-longeval.github.io/submissions">Submissions</a>
+                <a title="Submissions" href="https://clef-longeval.github.io/2024/submissions">Submissions</a>
             </td>
             <td class="navigation">
-                <a title="2024" href="https://clef-longeval.github.io/2024">2024</a>
+                <a title="2025" href="https://clef-longeval.github.io/"> 2025</a>
             </td>
             <td class="navigation">
                 <a title="2023" href="https://clef-longeval-2023.github.io/"> 2023</a>
             </td>
         </tr>
     </table>
-	
+
     <h1>Data</h1>
     <b><h2>  Task 1. LongEval-Retrieval </h2> </b>    
     <p>The data for this task is a sequence of web document collections and queries provided by Qwant.</p>
@@ -80,7 +80,37 @@
     <p>More details about the collection can be found in a paper:
     P. Galuscakova, R. Deveaud, G. Gonzalez-Saez, P. Mulhem, L. Goeuriot, F. Piroi, M. Popel: <a href="https://arxiv.org/abs/2303.03229">LongEval-Retrieval: French-English Dynamic Test Collection for Continuous Web Search Evaluation</a>. 
     </p>
+    <b><h2> Task 2. LongEval-Classification </h2></b>
+	
+        In this edition of the task, we utilize and expand upon the Climate Change Twitter dataset , known as CC-SD, focusing on climate change stance, post time, and tweet content. 
+	    The CC-SD dataset spans a comprehensive 13-year period and encompasses over 15 million tweets from various years. Employing the BERT model, 
+	    tweets are annotated with three stance labels: believers, deniers, and neutral. The annotated tweets are distributed across the timeline, with 11,292,424 believers, 1,191,386 deniers, and 3,305,601 neutral tweets.
+	    Annotation is conducted using transfer learning with BERT as distant supervision, based on another sentiment climate change dataset, allowing for manual annotation to enhance precision.
+	    
+	 <b> <h3>Task 2. LongEval-Classification Datasets</h3> </b>
+	
+	The <b> <a href="https://drive.google.com/file/d/1HHL7Hub56XXtWRrbhCex5CMu_BNavRkb/view?usp=sharing"> train set </a> </b> , spanning from 2009 to 2011, provides a comprehensive dataset for model training, sampled from CC-SD. It is not human annotated.
 
+	<b> <h4> Task 2. LongEval-Classification Datasets will be released into two phases. </h4> </b>
+        <b> <h4>Practice [Pre-Evaluation] Phase</h4> </b>
+
+	In the Practice phase, participants undertake pre-Evaluation tasks with datasets from 2010 and 2014, sampled from CC-SD, allowing them to practice within a recent time frame and over a short duration.
+	These datasets are manually verified. Additionally, human-annotated <b>within-time</b> and <b>short-term</b> practice sets are provided, also sampled from CC-SD, to refine model development before formal evaluation. 
+	<br>
+	<br><i><u><b> Practice Datasets </b></u></i> <br>	
+	 <a href="https://drive.google.com/file/d/1465bnuPJcstFhxV1A6HIWvISCShxIAnk/view?usp=sharing"> Practice sets</a>: within-practice and short-practice
+
+	    
+        <b> <h4>Evaluation Phase</h4> </b> 
+	    
+	The Evaluation phase assesses models using datasets from 2011, 2015, and the longer period of 2018-2019, all sampled from CC-SD. These datasets undergo manual verification and encompass <b>within-time</b> predictions,
+	<b>short-term</b> predictions, and <b>long-term</b> predictions, offering a holistic evaluation of model performance across various temporal contexts.
+	By incorporating datasets covering different years, the evaluation ensures thorough testing and understanding of models' temporal persistence and performance.
+	<br>    
+	<br><i><u><b> Evaluation Datasets </b></u></i> <br>
+<!-- 	 <a href="https://drive.google.com/file/d/1F8iHWdowvvGVPTmWk-hkrOrKyj2Wv1Be/view?usp=sharing"> Testing Evaluation sets (no-labels) </a> -->
+	 <a href="https://drive.google.com/drive/folders/16eWJsSJB2rSptjb_2pZE30rH61BmbGd_?usp=sharing"> Testing Evaluation sets (gold-labels) </a>
+        <br><h3> <b>  Good Luck! </b> </h3> <br> 
 	
  <br> 
 </body>

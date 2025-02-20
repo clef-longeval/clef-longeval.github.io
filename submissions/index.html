@@ -9,7 +9,7 @@
     <meta name="resource-type" content="document">
     <meta name="distribution" content="global">
     <meta name="KeyWords" content="Conference">
-    <title>LongEval 2024</title>
+    <title>LongEval 2025</title>
 </head>
 
 <body>
@@ -17,7 +17,7 @@
     <div class="banner">
         <img src="https://clef-longeval.github.io/assets/banner.jpg" alt="Conference Template Banner">
         <div class="top-left">
-            <span class="title1">LongEval CLEF 2024 Lab</span>
+            <span class="title1">LongEval CLEF 2025 Lab</span>
         </div>
         <div class="bottom-right">
             Longitudinal Evaluation of Model Performance
@@ -39,23 +39,34 @@
                 <a title="Tasks" href="https://clef-longeval.github.io/tasks">Tasks</a>
             </td>
             <td class="navigation">
-                <a title="Data" href="https://clef-longeval.github.io/data">Data</a>
+                <a  title="Data" href="https://clef-longeval.github.io/data">Data</a>
             </td>
             <td class="navigation">
                 <a class="current" title="Submissions" href="https://clef-longeval.github.io/submissions">Submissions</a>
+            </td>
+            <td class="navigation">
+                <a title="2024" href="https://clef-longeval.github.io/2024">2024</a>
             </td>
             <td class="navigation">
                 <a title="2023" href="https://clef-longeval-2023.github.io/"> 2023</a>
             </td>
         </tr>
     </table>
+	
 
     <h1>Submissions</h1>
-    <h2> Task 1. LongEval-Retrieval: </h2>
-
-    <p>Submissions will be done using through CodaLab compition, you can access <a href="https://codalab.lisn.upsaclay.fr/competitions/18739">COMPETITION HERE </a>.  Each team will need to participat in the competition and submit their runs through it. </p>
+   
+    <!-- <p>Submissions will be done using through CodaLab compition, you can access <a href="https://codalab.lisn.upsaclay.fr/competitions/18739">COMPETITION HERE </a>.  Each team will need to participant in the competition and submit their runs through it. </p> -->
+    <p>Submissions will be done using through CodaLab compition, you can access <a href="https://codalab.lisn.upsaclay.fr/competitions/">COMMING SOON </a>.
+          Each team will need to participant in the competition and submit their runs through it. </p>
     
-    <p>All the participants need to provide results for each submitted system on both Lag6 and Lag8 test sets. This allows the organizers to acquire the information about the change of the system&rsquo;s performance. Participants can submit up to 10 systems. Participants also need to provide a short description of each of the submitted systems.<br /><br />We further denote the submission of a single system as the&nbsp;<strong>run</strong>. The individual runs need to be submitted in the TREC format. For each query in each run, it is allowed to return up to 1000 documents.</p>
+    <p>All the participants need to provide results for each submitted system on both Lag6 and Lag8 test sets. This allows the organizers to acquire the information about the change of the system&rsquo;s performance. Participants can submit up to 10 systems. 
+        Participants also need to provide a short description of each of the submitted systems.
+        <br />
+        <br />
+    We further denote the submission of a single system as the&nbsp;<strong>run</strong>. 
+    The individual runs need to be submitted in the TREC format. 
+    For each query in each run, it is allowed to return up to 1000 documents.</p>
     
     <p>Each system should be submitted in a single zipped file consisting of a following tuple:</p>
         <ul>
@@ -66,13 +77,30 @@
 
     <p>&nbsp;</p>
     
-    <p><strong>team_system.lag6</strong>&nbsp;contains a run (a single TREC file) of the system acquired on the Lag6 test collection.<br /><strong>team_system.lag8</strong>&nbsp;contains a run (a single TREC file) of the system acquired on the Lag8 test collection.<br /><strong>team_system.meta</strong>&nbsp;contains a short description of the approach. This file should contain the information which indexing and ranking methods were applied, what type of training was applied and which training data were used. Please specify if you used statistical or neural approaches and if you used sparse or dense retrieval methods. Also, please include the information if the approach uses a single ranking approach, multiple-stages of rankers or any (and what) other type of fusion. Participants also need to describe if they used French data, provided English translations, 1-best or n-best translations, or their own translations and the resources (memory, GPUs, CPUs) used. Participants should use&nbsp;<a href="https://github.com/clef-longeval/IR-Participants/blob/9709a89dc59b093e9a6fd99a29666ae05ebf1c9e/Submissions/team_system.meta">this provided form</a>&nbsp;for filling all the system details.</p>
+    <p><strong>team_system.lag6</strong>&nbsp;contains a run (a single TREC file) of the system acquired on the Lag6 test collection.<br /><strong>team_system.lag8</strong>&nbsp;contains a run (a single TREC file) of the system acquired on the Lag8 test collection.<br /><strong>team_system.meta</strong>&nbsp;contains a short description of the approach.
+         This file should contain the information which indexing and ranking methods were applied, 
+         what type of training was applied and which training data were used.
+          Please specify if you used statistical or neural approaches and if you used sparse or dense retrieval methods.
+           Also, please include the information if the approach uses a single ranking approach, multiple-stages of rankers 
+           or any (and what) other type of fusion. Participants also need to describe if they used French data, 
+           provided English translations, 1-best or n-best translations, or their own translations and the resources 
+           (memory, GPUs, CPUs) used. 
+           Participants should use&nbsp;<a href="https://github.com/clef-longeval/IR-Participants/blob/9709a89dc59b093e9a6fd99a29666ae05ebf1c9e/Submissions/team_system.meta">
+        this provided form</a>&nbsp;for filling all the system details.</p>
     
-    <p>All the files in a single zipped document should thus correspond to a single system. The name of this system should contain the name of the team and an unique identifier of this system. The suffix of each file should either be lag6, lag8 or meta. For example, if the file contains the submission of the BM25 system of the RSA_TU_UGA team applied on the lag6 collection, the file name can be<strong> RSA_TU_UGA_BM25.lag6</strong>.</p>
+    <p>All the files in a single zipped document should thus correspond to a single system. 
+        The name of this system should contain the name of the team and an unique identifier of this system. 
+        The suffix of each file should either be lag6, lag8 or meta. For example, 
+        if the file contains the submission of the BM25 system of the RSA_TU_UGA team applied on the lag6 collection, 
+        the file name can be<strong> RSA_TU_UGA_BM25.lag6</strong>.</p>
         
-    <p>Each system might be either run on French or English data (or their combination). The participants might also opt to use their own translations systems or even manual translations. However, if&nbsp;<strong>any manual intervention</strong>&nbsp;is used, even for the translation, participants need to clearly state this in the system description.</p>
+    <p>Each system might be either run on French or English data (or their combination). 
+        The participants might also opt to use their own translations systems or even manual translations.
+         However, if&nbsp;<strong>any manual intervention</strong>&nbsp;is used, even for the translation, 
+         participants need to clearly state this in the system description.</p>
         
-    <p>The submitted runs (i.e.&nbsp;<strong>team_system.lag6</strong>&nbsp;and<strong>&nbsp;<strong>team_system.lag8</strong></strong>) should follow the <a href="https://github.com/joaopalotti/trectools">TrecRun format</a>:</p>
+    <p>The submitted runs (i.e.&nbsp;<strong>team_system.lag6</strong>&nbsp;and<strong>&nbsp;<strong>team_system.lag8</strong></strong>) 
+        should follow the <a href="https://github.com/joaopalotti/trectools">TrecRun format</a>:</p>
         
     <p dir="auto">qid Q0 docno rank score tag</p>
         
@@ -89,49 +117,6 @@
         
     <p dir="auto">Example:<br />1 Q0 nhslo3844_12_012186 1 1.73315273652 mySystem<br />1 Q0 nhslo1393_12_003292 2 1.72581054377 mySystem<br />1 Q0 nhslo3844_12_002212 3 1.72522727817 mySystem<br />1 Q0 nhslo3844_12_012182 4 1.72522727817 mySystem<br />1 Q0 nhslo1393_12_003296 5 1.71374426875 mySystem</p>
     
-    <h2> Task 2. LongEval-Classification: </h2>
-
-    <p> Codalab will be shared with participants upon data completion. You need to register through <a href="https://clef2024-labs-registration.dei.unipd.it/">CLEF website </a>  to get all updates  </p> 
-        
-    <p>Participants are expected to propose temporally persistent classifiers based on state-of-the-art data-centric or architecture-centric computational methods. 
-    The goal is to achieve high weighted-F1 performance across short and long temporally distant test sets while maintaining a reasonable RPD when compared 
-    to a test set from the same time period as training. We intend to use <a href="https://huggingface.co/roberta-base">RoBERTa</a> as a baseline classifier
-    for our task because it has been demonstrated to be persistent over time. </p> 
-
-    
-    
-    <p> Participants are expected to propose temporally persistent classifiers based on state-of-the-art data-centric or architecture-centric computational methods. 
-    The goal is to achieve high weighted-F1 performance across short and long temporally distant test sets while maintaining a reasonable RPD when compared 
-    to a test set from the same time period as training. We intend to use <a href="https://huggingface.co/roberta-base">RoBERTa</a> as a baseline classifier
-    for our task because it has been demonstrated to be persistent over time. </p>
-    
-    
-    <b> <h3>Practice [Pre-Evaluation]</h3> </b>
-        <i> <b>You can access the <a href="https://codalab.lisn.upsaclay.fr/competitions/16453">COMPETITION HERE </a> and submit to <u>Practice</u> to evaluate your model and practice submittion process  </i> </b> <br> 
-        <b> You can download the training and practice sets from here: <a href="https://drive.google.com/file/d/1HHL7Hub56XXtWRrbhCex5CMu_BNavRkb/view?usp=sharing"> Training data </a> with two temporal <a href="https://drive.google.com/file/d/1465bnuPJcstFhxV1A6HIWvISCShxIAnk/view?usp=sharing"> practice sets </a>  </b> <br>
-        <br><i><u><b> Submission format </b></u></i> <br> 
-        When submitting to Codalab, please submit a single zip file containing a folder called “submission”. This folder must contain THREE files:  <br> 
-        1. WithinPractice_predictions.txt (with within predictions - within_practice.csv)  <br> 
-        2. ShortPractice_predictions.txt  (with distant predictions - short_practice.csv)  <br> 
-
-        
-        <br>
-        <b> <h3>Evaluation</h3> </b> 
-        <i> <b>You can access the <a href="https://codalab.lisn.upsaclay.fr/competitions/16453"> COMPETITION HERE </a> and submit to <u>Evaluation</u> to evaluate your model and rank its performance  </i> </b> <br> 
-        <b> You can download the evaluation set from here: <a href="https://drive.google.com/file/d/1F8iHWdowvvGVPTmWk-hkrOrKyj2Wv1Be/view?usp=sharing"> Three temporal evaluation sets without gold labels </a>  </b> <br>
-        <br><i><u><b> Submission format </b></u></i> <br> 
-        When submitting to Codalab, please submit a single zip file containing a folder called “submission”. This folder must contain THREE files:  <br> 
-        1. WithinDev_predictions.txt (with within predictions - within_dev.csv)  <br> 
-        2. ShortDev_predictions.txt  (with distant/short predictions - short_dev.csv)  <br> 
-        3. LongDev_predictions.txt   (with distant/long predictions - long_dev.csv)  <br> 
-        
-     
-    <b> <h3>Notes</h3> </b>
-    <p><h5>  Use <a href="https://drive.google.com/file/d/1sicIv3E-3dbLZi2i1vf4rnm2mWfRUb73/view?usp=sharing"> Format checking script </a> </b> for test your formatting and look into examples provided here:
-        <a href="https://drive.google.com/drive/folders/1Q3lj2GIFYroSpIqjdM6qW644JpzhSP7w?usp=sharing"> with baseline model results </a>  </h5></p>
-    <p><h5> The submissions for each sub-task will be ranked based on the first metric of macro-averaged F1. We encourage participants to contribute 
-        to both sub-tasks in order to be correctly placed on a
-        joint leader board, as well as to enable better analysis of their system performance in both settings. Evaluate your model using <a href='https://codalab.lisn.upsaclay.fr/competitions/16453'>CodaLab</a> </h5></p>
 
 </body>
 </html>
