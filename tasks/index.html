@@ -30,12 +30,12 @@
             <td class="navigation">
                 <a title="description" href="https://clef-longeval.github.io/">Description</a>
             </td>
-            <td class="navigation">
+            <!-- <td class="navigation">
                 <a title="Dates" href="https://clef-longeval.github.io/dates">Dates</a>
             </td>
             <td class="navigation">
                 <a title="Organizers" href="https://clef-longeval.github.io/organizers">Organizers</a> 
-            </td>
+            </td> -->
             <td class="navigation">
                 <a class="current" title="Tasks" href="https://clef-longeval.github.io/tasks">Tasks</a>
             </td>
@@ -55,40 +55,15 @@
     </table>
 	
 
-    <h1>Tasks</h1>
+    <h3>Tasks</h3>
 
-    <p> In this third iteration the LongEval Lab at CLEF continues to explore
-        the temporal dynamics in IR. This includes the potential and limitations of
-        temporal relevance signals for ranking, temporal robustness of systems, and novel
-        evaluation methods factoring time. By that, the lab sensitizes for the temporal
-        uncertain validity of conventional evaluations in IR. Considering the temporal
-        dimension provides a new perspective on search and ultimately leads to a more
-        holistic view on the retrieval problem.
-    </p>
-    <p> This year, the lab provides a unique test bed comprising <b>two evolving test
-            collections</b>.
-        They cover the established retrieval scenarios of Web search and
-        scientific retrieval, which have different goals and distinct dynamics.
-        Participants are invited to submit retrieval runs to two tasks that cope with these dynamics.
+    <p> This year, the lab provides <b>two evolving test collections</b>, one for the web retrieval IR evaluation and one for scientific article retrieval evaluation.
     </p>
 
 
-    <h2> Task 1. LongEval-WebRetrieval: </h2>
+    <h4> Task 1. LongEval-Web Retrieval: </h4>
 
     <b>Objectives:</b> <br>
-
-    <p>The goal of Task 1 is to propose an information retrieval system which can handle
-        changes over the time.
-
-        The proposed retrieval system should follow the temporal timewise evolution of Web documents.
-        In LongEval, we propose to use evolving Web data to evaluate IR systems longitudinally:
-        the systems are expected to be persistent in their retrieval effectiveness over
-        time. The systems are evaluated on monthly several snapshots of documents
-        and queries (lags), derived from real data acquired from a French Web search
-        engine, Qwant.
-
-    </p>
-
 
     <p>The collection aims at answering fundamental questions on the robustness and the
         stability of Web search engines against the evolution of the data. Regarding
@@ -127,26 +102,14 @@
     In total, we will release <b>15 datasets</b> considering documents and queries adressed at the specific month
     snapshot.
 
-    <h2> Task 2. LongEval-SciRetrieval: </h2>
-
+    <h4> Task 2. LongEval-Sci Retrieval: </h4>
 
     <p>
-        The second task of the LongEval 2025 Lab is similar to the first task, and aims to
-        examine how IR systems’ effectiveness changes over time, when the underlying
-        document collection changes, where the documents are scientific publications.
-        The documents that will make the dataset for this task are acquired from the
-        <a title="3 CORE (COnnecting REpositories)" href="https://core.ac.uk/"> CORE </a> 
-        collection of scholarly documents. To our knowledge, CORE is currently
-        the largest aggregated collection of Open Access full text scholarly documents.
-        CORE provides a range of services built on top of this content and these
-        services are currently used by over 30 million unique users each month. CORE
-        Search provides a web UI for users to query the entire database of scholarly
-        documents. This service registers over one million searches each month.
+        The second task of the LongEval 2025 Lab is similar to the first task, with the difference that the test collections contain scientific publications 
+acquired from the <a title="3 CORE (COnnecting REpositories)" href="https://core.ac.uk/"> CORE </a> collection of open access scholarly documents.
     </p>
 
-    <p> Similarly to Task 1, we will use the click information to drive the 
-        relevance assessments for the test collections which consists of two main components 
-        that contain both the search and click information : 
+    <p> Similarly to Task 1, we will use the click information to drive the relevance assessments for the test collections which consists of two main components that contain both the search and click information : 
     </p>
 
     <ul>
@@ -159,21 +122,15 @@
             the results list; iii) the position of clicked link in results list. </li>
     </ul>
 
-    <p>Since this is the first time this task is organized, the number of dataset lags is
-        lower than those used in the first task. We aim to release two training datasets
-        and one or two test datasets.</p>
+    <p>Since this is the first time this task is organized, the number of dataset snapshots is lower than those in the first task.</p>
 
 
-    <h1>Evaluation</h1>
+    <h3>Evaluation</h3>
     <p> The submitted systems will be evaluated in two ways: </p>
     <p>(1) <b><i>nDCG scores</i></b> calculated on provided test sets. Such a classical evaluation measure is consistent
         with Web search, for which the discount emphasises the ordering of the top results. </p>
-    <p>(2) <b><i>Relative nDCG Drop (RnD)</i></b> measured by computing the difference between Lag5 and Lag7 test sets.
+    <p>(2) <b><i>Relative nDCG Drop (RnD)</i></b> measured by computing the difference between snapshots test sets.
         This measure supports the evaluation of the impact of the data changes on the systems’ results. </p>
-    <p>These measures will be used to assess the extent to which systems provide good results, but also the extent to
-        which they are robust against the changes within the data (queries/documents) along time. Using these evaluation
-        measures, a system that has good results using nDCG, and also good results according to the RnD measure is
-        considered to be able to cope with the evolution over time of the Information Retrieval collection.</p>
 
 </body>
 
