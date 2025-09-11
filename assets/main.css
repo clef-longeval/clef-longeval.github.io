@@ -33,7 +33,7 @@ body{
     font-family:'Roboto',sans-serif;
     font-size:1em;
     line-height:1.5em;
-    margin: 60px auto;
+    margin: 20px auto;
     width: 1000px;
 }
 
@@ -158,4 +158,41 @@ pre {
     /* background: hsl(30,80%,90%); */
     /* word-wrap: break-word; */
     /* max-width: ; */
+}
+
+/* General styling for all navigation links */
+td.navigation a {
+    display: block; /* Makes the entire cell area clickable */
+
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* This class will be added to the table cell containing the dropdown */
+.dropdown {
+    position: relative; /* Required for positioning the dropdown content */
+}
+
+/* The container for the dropdown links */
+.dropdown-content {
+    display: none; /* Hide the dropdown by default */
+    position: absolute;
+    background-color: #fafafa;
+    min-width: 100%; /* Make dropdown at least as wide as the parent cell */
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden; /* Ensures content respects the border-radius */
+    margin-top: 1px; /* Small gap */
+}
+
+/* Styling for links inside the dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 0.8em; /* Make text slightly smaller than main nav */
+}
+
+/* Show the dropdown menu on hover over the parent cell */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
