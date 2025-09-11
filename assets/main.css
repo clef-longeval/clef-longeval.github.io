@@ -168,8 +168,8 @@ td.navigation a {
 }
 
 /* This class will be added to the table cell containing the dropdown */
-.dropdown {
-    position: relative; /* Required for positioning the dropdown content */
+td.navigation .dropdown {
+position: relative; /* Required for positioning the dropdown content */
 }
 
 /* The container for the dropdown links */
