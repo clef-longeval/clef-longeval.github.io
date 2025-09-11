@@ -3,8 +3,8 @@
 
 <head>
     <base href=".">
-    <link rel="shortcut icon" type="image/png" href="https://clef-longeval.github.io/assets/favicon.png"/>
-    <link rel="stylesheet" type="text/css" media="all" href="https://clef-longeval.github.io/assets/main.css"/>
+    <link rel="shortcut icon" type="image/png" href="https://clef-longeval.github.io/assets/favicon.png" />
+    <link rel="stylesheet" type="text/css" media="all" href="https://clef-longeval.github.io/assets/main.css" />
     <meta name="description" content="Conference Template">
     <meta name="resource-type" content="document">
     <meta name="distribution" content="global">
@@ -15,12 +15,12 @@
 <body>
 
     <div class="banner">
-        <img src="https://clef-longeval.github.io/assets/banner.jpg" alt="Conference Template Banner">
+        <img src="https://clef-longeval.github.io/assets/banner_2026.png" alt="Conference Template Banner">
         <div class="top-left">
-            <span class="title1">LongEval CLEF 2025 Lab</span>
+            <span class="title1">LongEval CLEF 2026 Lab</span>
         </div>
         <div class="bottom-right">
-            Longitudinal Evaluation of Model Performance
+            Longitudinal Evaluation of IR Model Performance
         </div>
     </div>
 
@@ -39,12 +39,16 @@
             <td class="navigation">
                 <a class="current" title="Tasks" href="https://clef-longeval.github.io/tasks">Tasks</a>
             </td>
-            <td class="navigation">
+            <!-- <td class="navigation">
                 <a  title="Data" href="https://clef-longeval.github.io/data">Data</a>
             </td>
             <td class="navigation">
                 <a  title="Submissions" href="https://clef-longeval.github.io/submissions">Submissions</a>
+            </td> -->
+            <td class="navigation">
+                <a title="2025" href="2025">2025</a>
             </td>
+
             <td class="navigation">
                 <a title="2024" href="https://clef-longeval.github.io/2024">2024</a>
             </td>
@@ -53,84 +57,24 @@
             </td>
         </tr>
     </table>
-	
+
 
     <h3>Tasks</h3>
 
-    <p> This year, the lab provides <b>two evolving test collections</b>, one for the web retrieval IR evaluation and one for scientific article retrieval evaluation.
-    </p>
-
-
-    <h4> Task 1. LongEval-Web Retrieval: </h4>
-
-    <b>Objectives:</b> <br>
-
-    <p>The collection aims at answering fundamental questions on the robustness and the
-        stability of Web search engines against the evolution of the data. Regarding
-        Websearch evaluation, LongEval focuses on the following questions:
-    </p>
     <p>
-    <ul>
-        <li>
-            (1) How does a search engine behave as the collection of documents available to it evolves? Such a question
-            is especially important for commercial systems, as the satisfaction of users is central to such systems.
-        </li>
-        <li>
-            (2) When do we need to update an IR system as the collection of documents to be searched in changes? If we
-            are able to assess the decrease in performance (if any) of a system on an evolving collection, we may then
-            decide if the system needs to be updated.
-        </li>
-    </ul>
-
-    <p>
-        In comparison to LongEval 2023 and 2024, in this iteration, we enlarge the training and test
-        collections with additional snapshots that will allow fine-grained analysis of
-        changes in the data collection from one snapshot to another.
+        In 2026, LongEval will continue the Sci-Retrieval task introduced in 2025 and will also feature three new tasks.
+        Stay tuned for more information. To ensure you don't miss any updates, please join our <a
+            href="https://groups.google.com/g/longeval">Google Group</a> or <a href="longeval.slack.com">Slack
+            channel</a>.
     </p>
 
-    <p>To assess an information retrieval system, we provide several datasets of a changing Web documents and users’
-        queries:</p>
-    <ul>
-        <li>
-            - <b>Training set:</b> 9 monthly data snapshots, acquired from <b> June 2022 to February 2023 </b> composed
-            of documents (18M), queries (9k) , and qrels.
-        </li>
-        <li> - <b>Test set:</b>, 6 monthly data snapshots, acquired from <b>March 2023 to August 2023</b>, composed of
-            documents and queries. </li>
-    </ul>
+    <h4> Task 1. Scientific Retrieval</h4>
 
-    In total, we will release <b>15 datasets</b> considering documents and queries adressed at the specific month
-    snapshot.
+    <h4> Task 2. Topic Extraction From Query Logs</h4>
 
-    <h4> Task 2. LongEval-Sci Retrieval: </h4>
+    <h4> Task 3. User Simulation</h4>
 
-    <p>
-        The second task of the LongEval 2025 Lab is similar to the first task, with the difference that the test collections contain scientific publications 
-acquired from the <a title="3 CORE (COnnecting REpositories)" href="https://core.ac.uk/"> CORE </a> collection of open access scholarly documents.
-    </p>
-
-    <p> Similarly to Task 1, we will use the click information to drive the relevance assessments for the test collections which consists of two main components that contain both the search and click information : 
-    </p>
-
-    <ul>
-        <li>
-            - <b> Search Information</b> includes i) unique (anonymous) identifiers
-            for individual user session; ii) search query; iii) returned results.
-        </li>
-        <li> - <b>Click Information</b> records, for each click, i) a unique (anonymous)
-            identifier for individual user session; ii) the link that was clicked in
-            the results list; iii) the position of clicked link in results list. </li>
-    </ul>
-
-    <p>Since this is the first time this task is organized, the number of dataset snapshots is lower than those in the first task.</p>
-
-
-    <h3>Evaluation</h3>
-    <p> The submitted systems will be evaluated in two ways: </p>
-    <p>(1) <b><i>nDCG scores</i></b> calculated on provided test sets. Such a classical evaluation measure is consistent
-        with Web search, for which the discount emphasises the ordering of the top results. </p>
-    <p>(2) <b><i>Relative nDCG Drop (RnD)</i></b> measured by computing the difference between snapshots test sets.
-        This measure supports the evaluation of the impact of the data changes on the systems’ results. </p>
+    <h4> Task 4. Retrieval Augmented Generation (RAG)</h4>
 
 </body>
 
