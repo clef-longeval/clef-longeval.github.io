@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <base href=".">
+    <link rel="shortcut icon" type="image/png" href="https://clef-longeval.github.io/assets/favicon.png"/>
+    <link rel="stylesheet" type="text/css" media="all" href="https://clef-longeval.github.io/assets/main.css"/>
+    <meta name="description" content="Conference Template">
+    <meta name="resource-type" content="document">
+    <meta name="distribution" content="global">
+    <meta name="KeyWords" content="Conference">
+    <title>LongEval 2025</title>
+</head>
+
+<body>
+
+    <div class="banner">
+        <img src="https://clef-longeval.github.io/assets/banner.jpg" alt="Conference Template Banner">
+        <div class="top-left">
+            <span class="title1">LongEval CLEF 2025 Lab</span>
+        </div>
+        <div class="bottom-right">
+            Longitudinal Evaluation of Model Performance
+        </div>
+    </div>
+
+    <table class="navigation">
+        <tr>
+            <td class="navigation">
+                <a title="description" href="https://clef-longeval.github.io/">Description</a>
+            </td>
+            <!-- <td class="navigation">
+                <a title="Dates" href="https://clef-longeval.github.io/dates">Dates</a>
+            </td>
+            <td class="navigation">
+                <a title="Organizers" href="https://clef-longeval.github.io/organizers">Organizers</a> 
+            </td> -->
+            <td class="navigation">
+                <a title="Tasks" href="https://clef-longeval.github.io/tasks">Tasks</a>
+            </td>
+            <td class="navigation">
+                <a  title="Data" href="https://clef-longeval.github.io/data">Data</a>
+            </td>
+            <td class="navigation">
+                <a class="current" title="Submissions" href="https://clef-longeval.github.io/submissions">Submissions</a>
+            </td>
+            <td class="navigation">
+                <a title="2024" href="https://clef-longeval.github.io/2024">2024</a>
+            </td>
+            <td class="navigation">
+                <a title="2023" href="https://clef-longeval-2023.github.io/"> 2023</a>
+            </td>
+        </tr>
+    </table>
+	
+
+<style>
+    .submission-section {
+        background-color: #f9f9f9;
+        padding: 20px;
+        margin-top: 20px;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        border-radius: 6px;
+    }
+
+    .submission-section h1 {
+        color: #333;
+    }
+
+    .submission-section b {
+        color: #000;
+    }
+
+    .submission-section a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+    .submission-section a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="submission-section">
+    <h1>Submissions</h1>
+
+    <p>
+        Submissions will be handled via <b><a href="https://www.tira.io/task-overview/longeval-2025">TIRA.io</a></b>.
+    </p>
+
+    <p>
+        <b>Submission Platform:</b>
+        <a href="https://www.tira.io/task-overview/longeval-2025">TIRA Task Page</a> <br>
+
+        <b>Runs Submission Deadline:</b> May 26, 2025 <br>
+
+        <b>Submission Format:</b> TREC-style run files, as specified in the submission instructions <br>
+
+        <b>Submission Instructions & Format Details:</b>
+        <a href="https://github.com/clef-longeval/longeval-code/tree/main/clef25">
+            GitHub Submission Guide
+        </a><br>
+
+        <b>Optional:</b> Software submissions are also welcomed for the <i>Sci-Retrieval</i> task <br>
+
+        <b>Evaluation Results:</b> Will be shared shortly after the submission deadline <br>
+
+        <b>Lab Report Deadline:</b> May 30, 2025
+    </p>
+</div>
+
+    
+<!--    <p><strong>team_system.lag6</strong>&nbsp;contains a run (a single TREC file) of the system acquired on the Lag6 test collection.<br /><strong>team_system.lag8</strong>&nbsp;contains a run (a single TREC file) of the system acquired on the Lag8 test collection.<br /><strong>team_system.meta</strong>&nbsp;contains a short description of the approach.
+         This file should contain the information which indexing and ranking methods were applied, 
+         what type of training was applied and which training data were used.
+          Please specify if you used statistical or neural approaches and if you used sparse or dense retrieval methods.
+           Also, please include the information if the approach uses a single ranking approach, multiple-stages of rankers 
+           or any (and what) other type of fusion. Participants also need to describe if they used French data, 
+           provided English translations, 1-best or n-best translations, or their own translations and the resources 
+           (memory, GPUs, CPUs) used. 
+           Participants should use&nbsp;<a href="https://github.com/clef-longeval/IR-Participants/blob/9709a89dc59b093e9a6fd99a29666ae05ebf1c9e/Submissions/team_system.meta">
+        this provided form</a>&nbsp;for filling all the system details.</p>
+    
+    <p>All the files in a single zipped document should thus correspond to a single system. 
+        The name of this system should contain the name of the team and an unique identifier of this system. 
+        The suffix of each file should either be lag6, lag8 or meta. For example, 
+        if the file contains the submission of the BM25 system of the RSA_TU_UGA team applied on the lag6 collection, 
+        the file name can be<strong> RSA_TU_UGA_BM25.lag6</strong>.</p>
+        
+    <p>Each system might be either run on French or English data (or their combination). 
+        The participants might also opt to use their own translations systems or even manual translations.
+         However, if&nbsp;<strong>any manual intervention</strong>&nbsp;is used, even for the translation, 
+         participants need to clearly state this in the system description.</p>
+        
+    <p>The submitted runs (i.e.&nbsp;<strong>team_system.lag6</strong>&nbsp;and<strong>&nbsp;<strong>team_system.lag8</strong></strong>) 
+        should follow the <a href="https://github.com/joaopalotti/trectools">TrecRun format</a>:</p>
+        
+    <p dir="auto">qid Q0 docno rank score tag</p>
+        
+    <p dir="auto">where:</p>
+        
+    <ul dir="auto">
+        <li><span>qid</span>&nbsp;is the query number</li>
+        <li><span>Q0</span>&nbsp;is the literal Q0</li>
+        <li><span>docno</span>&nbsp;is the id of a document returned for qid</li>
+        <li><span>rank</span>&nbsp;(1-999) is the rank of this response for this qid</li>
+        <li><span>score</span>&nbsp;is a system-dependent indication of the quality of the response</li>
+        <li><span>tag</span>&nbsp;is the identifier for the system</li>
+    </ul>
+        
+    <p dir="auto">Example:<br />1 Q0 nhslo3844_12_012186 1 1.73315273652 mySystem<br />1 Q0 nhslo1393_12_003292 2 1.72581054377 mySystem<br />1 Q0 nhslo3844_12_002212 3 1.72522727817 mySystem<br />1 Q0 nhslo3844_12_012182 4 1.72522727817 mySystem<br />1 Q0 nhslo1393_12_003296 5 1.71374426875 mySystem</p>
+    -->
+
+</body>
+</html>

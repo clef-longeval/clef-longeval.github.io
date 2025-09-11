@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <base href=".">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <link rel="stylesheet" type="text/css" media="all" href="assets/main.css"/>
+    <meta name="description" content="Conference Template">
+    <meta name="resource-type" content="document">
+    <meta name="distribution" content="global">
+    <meta name="KeyWords" content="Conference">
+    <title>LongEval 2025</title>
+</head>
+
+<body>
+
+    <div class="banner">
+        <img src="assets/banner.png" alt="Conference Template Banner">
+        <div class="top-left">
+            <span class="title1">LongEval CLEF 2025 Lab</span>
+        </div>
+        <div class="bottom-right">
+            Longitudinal Evaluation of IR Model Performance
+        </div>
+    </div>
+
+    <table class="navigation">
+        <tr>
+            <td class="navigation">
+                <a class="current" title="description" href=".">Description</a>
+            </td>
+            <!-- <td class="navigation">
+                <a title="Dates" href="dates">Dates</a>
+            </td> -->
+            <!-- <td class="navigation">
+                <a title="Organizers" href="organizers">Organizers</a> 
+            </td> -->
+            <td class="navigation">
+                <a title="Tasks" href="tasks">Tasks</a>
+            </td>
+            <td class="navigation">
+                <a title="Data" href="data">Data</a>
+            </td>
+            <td class="navigation">
+                <a title="Submissions" href="submissions">Submissions</a>
+            </td>
+			<td class="navigation">
+            	<a title="Program" href="program">Program</a>
+        	</td>
+            <td class="navigation">
+                <a title="2024" href="2024">2024</a>
+            </td>
+	        <td class="navigation">
+                <a title="2023" href="https://clef-longeval-2023.github.io/">2023</a>
+            </td>
+        </tr>
+    </tr>
+    </table>
+
+    <h5>What you can find on this page:</h5> 
+	<p>
+        Announcements<br>
+        General information and motivation of this lab<br>
+        Important dates in 2025<br>
+        Organizers and how to reach us <br>
+    </p>
+    
+
+<h4><b>LongEval 2025 Announcements!</b></h4>
+
+<p>
+    🧪 <b>Test Data Release:</b><br>
+    The test documents and topics are now available for both tasks:<br>
+    - <a href="https://researchdata.tuwien.ac.at/records/th5h0-g5f51?preview=1&token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjcwM2Y4MzQ0LTFlMDEtNDYxNy1iNDc4LTI5MmQ5MzYwNTU3NyIsImRhdGEiOnt9LCJyYW5kb20iOiI4NjYxMWFkODQzNDk2ZDk0NzllMDNlOWIyYWM1Zjc4NCJ9.YhnRV6WzWfQiuLQcGyTrA3gyI_5UBe9rtUAV6qKk5U7tqGEmD4NUdyfjGo2-U7tnBIlD7iTwUUDi0nw3GcXPmA">
+        Web-Retrieval
+    </a> and  
+    - <a href="https://researchdata.tuwien.ac.at/uploads/v8phe-g8911?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjkwY2VkMDRlLTFiMzAtNDg0NC05OWQ4LWZkY2Q4NDI4MmYzYSIsImRhdGEiOnt9LCJyYW5kb20iOiJiNjNkM2Y4MWE1NTA1MWJhOTVmYzE0OGExMzVjMGYzYSJ9.WyfYgp6ZOXaQzonKZ_t7gC3QKCgw0Q8mLPENZABZ4WJpw8-BwKNeXXbsRzNbK4YRFb8523qbV2fThPGwaNOxhg">
+        Sci-Retrieval
+    </a> tasks!
+
+    Both datasets are also accessible via a Python API using the <a href="https://github.com/clef-longeval/ir-datasets-longeval"><b>ir_dataset_longeval</b></a> toolkit.<br>
+    As a starting point, we provide PyTerrier baselines available in this GitHub repository:<br>
+    🔗 <a href="https://github.com/clef-longeval/longeval-code">https://github.com/clef-longeval/longeval-code</a>
+</p>
+
+<p>
+    📤 <b>Submission Guidelines:</b><br>
+    Submissions will be managed through <a href="https://www.tira.io/task-overview/longeval-2025"><b>TIRA.io</b></a>.<br>
+    For full submission instructions, including deadlines and formatting requirements, please see the <a href="https://clef-longeval.github.io/submissions/"><b>Submissions page</b></a>.
+</p>
+
+<p>
+    You can also find the final versions of the qrels and queries for the training collections here:  
+    <a href="https://github.com/clef-longeval/clef-longeval.github.io/tree/master/collection">(Train qrels and queries)</a><br><br>
+</p>
+
+
+    <h3>Motivation</h3>
+    
+    <p>
+     Most of the IR models are trained and evaluated on static data. However, (web) data is not static, and research shows that the efficiency of IR models drops as the test data becomes more distant in time from the training data. LongEval differs from traditional IR shared tasks by providing IR researchers the possibility to focus on models that mitigate performance drop over time. We envisage that this task will bring more attention from the NLP community to the problem of temporal generalisability of models, what enables or prevents it, potential solutions and limitations. 
+    </p>
+    <p>
+    The CLEF LongEval Lab encourages participants to develop information retrieval systems that survive through dynamic temporal text changes, introducing time as a new dimension for ranking models performance. 
+    </p>
+    <p> Compared with the LongEval 2023 and 2024 editions, in 2025, we enlarge the scope of LongEval to include both web oriented retrieval and scientific article retrieval. There are two tasks, each focusing on one area (web and scientific retrieval).
+    </p>
+    <p>
+    Both LongEval tasks use a sequence of datasets collected at different points in time, called "snaphots". The evaluation of IR system will consider the drop in IR metrics computed on the various snapshots.
+    </p>
+    
+    <p> The CLEF 2025 LongEval Lab encourages participants to develop temporal information retrieval systems that survive through dynamic temporal text changes, introducing time as a new dimension for ranking models performance. </p>
+
+    <h4>Previous editions</h4>
+    <p>LongEval 2025 is the third edition of this lab. Check our <a href="https://clef-longeval.github.io/2024/">2024 </a> and <a href="https://clef-longeval-2023.github.io/">2023 </a> websits to find information about previous years.</p>
+
+    <h4>Relevant Publications</h4>
+    <p>To understand the details of the LongEval Lab, please check the following publicaitions:<br>
+    
+    P. Galuscakova, R. Deveaud, G. Gonzalez-Saez, P. Mulhem, L. Goeuriot, F. Piroi, M. Popel: <a href="https://arxiv.org/abs/2303.03229">LongEval-Retrieval: French-English Dynamic Test Collection for Continuous Web Search Evaluation</a>. <br>
+        
+    LongEval 2023 <a href = "https://link.springer.com/chapter/10.1007/978-3-031-28241-6_58">overview paper.</a><br>
+    CEUR-WS LongEval 2023 <a href="https://ceur-ws.org/Vol-3497/"> workshop proceedings</a> (scroll down in the document).<br>
+    LongEval 2024 <a href = "https://link.springer.com/chapter/10.1007/978-3-031-56072-9_8">overview paper.</a><br>
+    CEUR-WS LongEval 2024 <a href="https://ceur-ws.org/Vol-3740/"> workshop proceedings</a> (scroll down in the document).<br>
+</p>
+
+
+    <h3>Important Dates</h3>
+    <p>
+
+        <b> 18 November 2025:</b> Registration opens -- <a href="https://clef2025-labs-registration.dei.unipd.it/"> here </a> <br> 
+        <b> February 2025:</b> Training data release <br>
+        <b> 25 April 2025:</b> Registration closes <br> 
+	<b> 6 May 2025:</b> Test data release <br>
+	<b> 8 May 2025:</b> Start evaluation cycle <br>
+	<b> 26 May 2025:</b> Systems submission deadline <br>
+        <b> 30 May 2025:</b> Submission of Participant Papers [CEUR-WS] via EasyChair (CLEF-imposed deadline)<br> 
+        <b> 27 June 2025:</b> Notification on Participant Papers [CEUR-WS] <br> 
+        <b> 7 July 2025: </b> Camera Ready Copy of Participant Papers and Extended Lab Overviews [CEUR-WS] <br>
+        <b> 9-12 September 2025:</b> <a href="https://clef2025.clef-initiative.eu/">CLEF Conference</a><br> 
+        
+    </p>
+
+    <h3>Organizers</h3>
+    <p>
+        Florina Piroi - TU Wien & RSA, AT<br>
+        Alaa El-Ebshihy - Research Studios Austria (RSA), AT<br>
+        Tobias Fink - RSA, AT<br>
+        Philippe Mulhem - University Grenoble, FR<br>
+        Philipp Schaer - TH-Köln, DE<br>
+        David Iommi - RSA, AT<br>
+        Jüri Keller - TH-Köln, DE<br>
+	Maik Fröbe - Friedrich-Schiller-Universität Jena, DE<br>
+        Petra Galuscakova - University of Stavanger, NO<br>
+        Lorraine Goeuriot - University of Grenoble, FR<br>
+        Gabriela Gonzalez-Saez - University of Grenoble, FR<br>
+        Matteo Cancellieri - The Open University<br>
+        David Pride - The Open University<br>
+        Petr Knoth - The Open University<br>        
+    </p>
+
+    <h4>Contact</h4>
+    <p><i> LongEval organizers: <a href="mailto: longeval-ir-task@univ-grenoble-alpes.fr">longeval-ir-task@univ-grenoble-alpes.fr</a> </i> </p>
+    
+    <p> Join our <a href="https://join.slack.com/t/longeval/shared_invite/zt-1tmql633q-w20e3oNq157bkhzkRsxPIQ"> slack channel </a> for any question. </p>
+</body>
+</html>
+
