@@ -159,3 +159,46 @@ pre {
     /* word-wrap: break-word; */
     /* max-width: ; */
 }
+
+
+
+
+/* improved task hint layout and appearance */
+.task-hint {
+    background: #fbfdff;
+    border-left: 4px solid #7a1740;
+    padding: 14px 16px;
+    margin: 12px 0 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+    align-items: start;
+}
+
+/* section title + body */
+.task-section { margin: 0; }
+.task-section-title {
+    margin: 0 0 6px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #7a1740;
+    display: block;
+}
+.task-section p {
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* make final section (usually Evaluation) span full width on larger screens */
+@media (min-width: 900px) {
+    .task-hint .task-section:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* link color (optional) */
+a { color: #2b7cff; }
+

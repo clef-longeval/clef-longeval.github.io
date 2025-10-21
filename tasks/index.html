@@ -22,23 +22,90 @@
     <h3>Tasks</h3>
 
     <p>
-        In 2026, LongEval will continue the Sci-Retrieval task introduced in 2025 and will also feature three new tasks.
-        Stay tuned for more information. To ensure you don't miss any updates, please join our <a
-            href="https://groups.google.com/g/longeval">Google Group</a> or <a href="longeval.slack.com">Slack
-            channel</a>.
+        LongEval 2026 continues the Sci-Retrieval task from 2025 and introduces three new tasks: LongEval-TopEx
+        (Topic Extraction), LongEval-USim (User Simulation), and LongEval-RAG (Retrieval-Augmented Generation).
+        Short descriptions, data sources and evaluation procedures for each task appear below. To receive
+        announcements and participate in discussions, please subscribe to our <a href="https://groups.google.com/g/longeval">Google Group</a>
+        or join the project Slack at <a href="https://longeval.slack.com">longeval.slack.com</a>.
     </p>
 
-    <h4> Task 1. Scientific Retrieval</h4>
+    <div class="task-card">
+        <h4 class="task-card-title">Task 1. LongEval-Sci: Ad-Hoc Scientific Retrieval</h4>
+        <div class="task-hint">
+        <div class="task-section">
+            <h5 class="task-section-title">Description</h5>
+            <p>Build IR systems that keep retrieval effectiveness over time as the scientific collection evolves. Submit runs on multiple time-stamped snapshots.</p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Data</h5>
+            <p>CORE documents and queries across multiple snapshots. Two training snapshots (e.g. 2024-11, 2025-01) and two test snapshots for short- and long-term persistence (~4M docs, ~1k queries).</p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Evaluation</h5>
+            <p>nDCG per snapshot; robustness across snapshots measured by Relative Improvement (RI), Delta Relative Improvement (DRI) and Effect Ratio (ER).</p>
+        </div>
+        </div>
+    </div>
 
-    <h4> Task 2. Topic Extraction From Query Logs</h4>
+    <div class="task-card">
+        <h4 class="task-card-title">Task 2.  LongEval-TopEx: Topic Extraction From Query Logs</h4>
+        <div class="task-hint">
+        <div class="task-section">
+            <h5 class="task-section-title">Description</h5>
+            <p>Extract TREC-style topics (query + description + narrative) from query logs to formalize the information need aligned with observed usage.</p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Data</h5>
+            <p>Training snapshot at time t; build a top-10 pool from Task-1 runs overlapping training queries and annotate with multiple LLM-based relevance assessors to obtain alternative qrels per topic.</p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Evaluation</h5>
+            <p>Assess topics on Alignment (agreement with click-log qrels), Distinguishability (ability to separate runs via nDCG) and Clarity (consistency across LLM annotations). Measure short- and long-term drops. Topics feed Task-3.</p>
+        </div>
+        </div>
+    </div>
 
-    <h4> Task 3. User Simulation</h4>
+    <div class="task-card">
+        <h4 class="task-card-title">Task 3. LongEval-USim: User Simulation</h4>
+        <div class="task-hint">
+        <div class="task-section">
+            <h5 class="task-section-title">Description</h5>
+            <p>Model user behaviors and query reformulations from CORE search sessions to predict the next query in a sequence.</p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Data & setup</h5>
+            <p>Pre-filtered session log excerpts (search_id, uid, queries, SERPs, clicks). A pre-configured SimIIR v3 environment is provided for simulations; Task-2 topics may be used as context.</p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Task</h5>
+            <p>Produce simulated queries or user-model configurations that replicate observed session behavior; train on historic logs and evaluate on held-out sessions.</p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Evaluation</h5>
+            <p>Compare simulated vs real queries/interactions: indistinguishability and performance-prediction. Use reproducibility measures and track short-/long-term simulator quality.</p>
+        </div>
+        </div>
+    </div>
 
-    <h4> Task 4. Retrieval Augmented Generation (RAG)</h4>
+    <div class="task-card">
+        <h4 class="task-card-title">Task 4. LongEval-RAG: Retrieval Augmented Generation (RAG)</h4>
+        <div class="task-hint">
+        <div class="task-section">
+            <h5 class="task-section-title">Description & data</h5>
+            <p>Evaluate RAG systems' ability to retrieve time-aware evidence and generate correct answers as scientific information evolves. Use short- and long-term CORE collections; queries target temporal changes or contradictions.</p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Submission</h5>
+            <p>For each query submit the generated response and the supporting documents/passages (with creation/publication/update times).</p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Evaluation</h5>
+            <p>Manual scoring on Answer Relevancy and Faithfulness (weighted equally).</p>
+        </div>
+        </div>
+    </div>
 
     <script src="/assets/js/include.js"></script>
-
-
 </body>
 
 </html>
