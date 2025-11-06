@@ -220,3 +220,59 @@ position: relative; /* Required for positioning the dropdown content */
 .task-card .task-hint { padding: 12px; background: transparent; border-left: none; box-shadow: none; }
 .task-card .task-section { padding: 6px 8px; }
 .task-card .task-section-title { font-size: 0.92rem; }
+
+
+/* dates table container and table styles (add near end of file) */
+.dates-container {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 14px 12px;
+    box-shadow: 0 1px 3px rgba(18,18,18,0.04);
+    margin-top: 12px;
+    border: 1px solid rgba(0,0,0,0.04);
+    overflow: auto;
+}
+
+.dates-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 0.95rem;
+}
+
+.dates-table thead th {
+    text-align: left;
+    padding: 10px 12px;
+    color: #444;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(0,0,0,0.08);
+    background: transparent;
+}
+
+.dates-table tbody td {
+    padding: 12px;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+    color: #333;
+}
+
+.dates-table tbody td:first-child,
+.dates-table thead th:first-child {
+    width: 220px;
+    white-space: nowrap;
+    padding-right: 18px;
+    color: #0b4dbf;
+    font-weight: 600;
+}
+
+.dates-table tbody tr:nth-child(odd) {
+    background: #fbfdff;
+}
+
+@media (max-width: 640px) {
+    .dates-table thead { display: none; }
+    .dates-table, .dates-table tbody, .dates-table tr, .dates-table td { display: block; width: 100%; }
+    .dates-table tr { margin-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.04); padding-bottom: 8px; }
+    .dates-table td { padding: 6px 0; }
+    .dates-table td:first-child { color: #0b4dbf; font-weight: 700; }
+}
