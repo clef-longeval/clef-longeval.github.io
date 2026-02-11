@@ -93,32 +93,32 @@
         <div class="task-section">
             <h5 class="task-section-title">Description & data</h5>
             <p>The Task 4 aims at studying to which extent does RAGs cope with  evolution of scientific knowledge in time.  Do to that, we provide the task participants a dataset composed  
-            of two parts:</p>  
-            <p>i) A textual query (along with its query id) for which the  participating system has to provide textual answer; </p>  
-            <p>ii) A set of document ids, mined from the corpus, on which the answer generation for particular query  must be solely  based (this set may be seen as a first stage filtering in a RAG system). This set of document is not expected to be composed  only of relevant documents to the query, but it also contains some relevant documents. The provided documents will be a part of the dataset provided within the Task 1. </p> 
-            <br>
-            <p>The problem that has to be solved by the participants of this task is to provide (based on the query and the list of provided documents):</p>
-            <p>a) The generated answer using the extracts of documents in part b) below. </p>
-            <p>b) the document extracts that are relevant to the query (text extracted from the textual content of the documents provided in ii), using the contents from the LongEval 2026 corpus).</p>
+            of two parts:<br>
+            i) A textual query (along with its query id) for which the  participating system has to provide textual answer; <br>  
+            ii) A set of document ids, mined from the corpus, on which the answer generation for particular query  must be solely  based (this set may be seen as a first stage filtering in a RAG system). This set of document is not expected to be composed  only of relevant documents to the query, but it also contains some relevant documents. The provided documents will be a part of the dataset provided within the Task 1. </p> 
+            
+            <p>The problem that has to be solved by the participants of this task is to provide (based on the query and the list of provided documents):<br>
+            a) The generated answer using the extracts of documents in part b) below. <br>
+            b) the document extracts that are relevant to the query (text extracted from the textual content of the documents provided in ii), using the contents from the LongEval 2026 corpus).</p>
         </div>
         <div class="task-section">
             <h5 class="task-section-title">Submission</h5>
-            <p>For the submission of participants runs:</p>
-            <p>The responses for the part a) will be submitted as a string corresponding to the generated answer: (query_id, answer) </p>
-            <p>The responses for the part b) will be submitted as a set of pairs (maximum 5): <br>   
-            <p>(query_id, {document extract}) : where a document extract is a character string considered to be relevant by the participant for the query. As several extracts may be defined, a run will contain a set of extracts. </p>
-            <p>The examples of an exact submission format and 3 training queries (based on the 2025 dataset) will be provided by the end of February.</p>  
+            <p>For the submission of participants runs:<br>
+            The responses for the part a) will be submitted as a string corresponding to the generated answer: (query_id, answer) <br>
+            The responses for the part b) will be submitted as a set of pairs (maximum 5): <br>   
+            (query_id, {document extract}) : where a document extract is a character string considered to be relevant by the participant for the query. As several extracts may be defined, a run will contain a set of extracts.<br> 
+            The examples of an exact submission format and 3 training queries (based on the 2025 dataset) will be provided by the end of February.</p>  
             <br>
-            <p>Overall, each submitted run is a zip file composed of  three text files, one for the a) for all queries, one for b) for all queries, and one file "description.txt" that shortly describes the submitted system. The name of the zip file will be used as the run name during the evaluation process.</p>  
-            <p>A maximum of 3 runs may be submitted by each participating team.</p>
-            <br>
-            <p>Example of task 4 query (based on the 2025 dataset):</p>  
-            <p>- Query_id: 00005<br>
+            <p>Overall, each submitted run is a zip file composed of  three text files, one for the a) for all queries, one for b) for all queries, and one file "description.txt" that shortly describes the submitted system. The name of the zip file will be used as the run name during the evaluation process.<br>  
+            A maximum of 3 runs may be submitted by each participating team.<br>
+            </p>p
+            <p>Example of task 4 query (based on the 2025 dataset):<br>  
+            - Query_id: 00005<br>
             - Query: "What operation dominates the cost of homomorphic AES evaluation, and how can hardware architectures reduce its impact?" <br>
             - Docs_id: {7964767, 66637364, 42856664, 31316619, 19943691, 19531678,156069243, 156069094, 150704088, 141753453} <br>
             </p>
             <p>The result for this query:<br>
-            <p>- Part a: (query_id: 00005, answer: "Large-degree polynomial multiplication dominates the cost of homomorphic AES evaluation. Hardware architectures reduce its impact by decomposing coefficients using CRT, performing fast NTT-based multiplications in parallel, and minimizing modular conversion overhead through optimized arithmetic pipelines.")  <br>
+            - Part a: (query_id: 00005, answer: "Large-degree polynomial multiplication dominates the cost of homomorphic AES evaluation. Hardware architectures reduce its impact by decomposing coefficients using CRT, performing fast NTT-based multiplications in parallel, and minimizing modular conversion overhead through optimized arithmetic pipelines.")  <br>
             - Part b: (query_id: 00005, extracts: {"Polynomial multiplication dominates AES evaluation cost."", "Hardware mitigation via CRT + NTT +  optimized modular arithmetic."})
             </p>
         </div>
