@@ -101,15 +101,60 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
             <pre>
 1,test_user,1,cultural female genital mutilation,2025-01-10 20:55:48,"[49700987, 41108296, 70340641, 8872149, 151014331, 68561928, 122589791, 126475067, 70353000, 163079162]",4c17b92490816aea96cbcc112f222913,"[('122589791', datetime.datetime(2025, 1, 10, 20, 56, 10), 'works')]"
 2,test_user,1,cultural female genital mutilation egypt,2025-01-10 20:57:03,"[107753778, 134385557, 134967534, 31315918, 15106563, 46676819, 45507658, 34140770, 62051567, 46753109]",de73be5d8bf71a6bc877615ebb29b447,"[('15106563', datetime.datetime(2025, 1, 10, 20, 57, 26), 'works')]"
-3,test_user,1, ...</pre>
+3,test_user,1, ...</pre>            
         </div>
         <div class="task-section">
-            <h5 class="task-section-title">Task</h5>
-            <p>Produce simulated queries or user-model configurations that replicate observed session behavior; train on historic logs and evaluate on held-out sessions.</p>
+            <h5 class="task-section-title">Submission Format</h5>
+            <p>For each implemented persona, submit a run file containing:</p>
+            <ul>
+                <li><strong>team_name</strong>: Can be freely chosen</li>
+                <li><strong>description</strong>: Provide a brief summary of the underlying approach. 
+                    This can be a link to a repository, a prompt definition, or anything that helps 
+                    explain your approach.</li>
+                <li><strong>run_name</strong>: Should be meaningful and align with the naming used in 
+                    your lab notes, though it can still be chosen individually.</li>
+            </ul>
+            <p>For each session, predict 5 diverse query candidates that remain semantically similar 
+                to the original query. Rank them in descending order of confidence.</p>
+            <p>Run file example:</p>
+            <pre>
+{
+  "meta": {
+    "team_name": "",
+    "description": "<Can contain a link to a repository, a prompt, ..>",
+    "run_name": ""
+  },
+  "1": [ "Q1", "Q2", "Q3", "Q4", "Q5" ],
+  "2": [ "Q1", "Q2", "Q3", "Q4", "Q5" ],
+  "...": [ "Q1", "Q2", "Q3", "Q4", "Q5" ],
+  "45": [ "Q1", "Q2", "Q3", "Q4", "Q5" ]
+}</pre>
         </div>
         <div class="task-section">
             <h5 class="task-section-title">Evaluation</h5>
-            <p>Compare simulated vs real queries/interactions: indistinguishability and performance-prediction. Use reproducibility measures and track short-/long-term simulator quality.</p>
+            <p>We will evaluate the query candidates based on semantic similarity to the original, withheld 
+                query, and the redundancy among the candidates themselves. We will use the Rank-Diversity Score (RDS) 
+                from the <a href="https://arxiv.org/pdf/2511.09329">Sim4IA-Bench suite</a>.
+            <p>We will measure differences in RDS across snapshots. At the end, we would like to see which user 
+                simulation or user modeling approach was most successful across the available snapshots. </p>
+        </div>
+        <div class="task-section">
+            <h5 class="task-section-title">Starting Points, Framework, and Synergies</h5>
+            <p>To ensure an easy start, we offer an adapted version of the SimIIR 3.0 Framework, including 
+                sample simulators and video tutorials. However, the choice of framework remains entirely up 
+                to the participants.</p>
+            <p>For constructing the user simulator that performs the next-query prediction, we encourage 
+                participants not only to effectively leverage all provided signals but also to integrate 
+                supplementary or self-engineered features to enhance their simulator's predictive power. 
+                Feel free to try out strategies like personas or specific user attributes (e.g., degree, 
+                research field, or preferred interaction style). Different initial ideas can be drawn from 
+                the <a href="https://zenodo.org/communities/sim4ia_workshop_2025/records?q=&l=list&p=1&s=10&sort=newest">results of the Sim4IA Micro Shared Task 2025</a>.</p> 
+            <p>We will not provide topic descriptions for the sessions or direct relevance judgments, 
+                although inputs and overlaps from previous tasks are especially welcome. Participants 
+                engaged in Subtask 2 ("Topic Generation") are strongly encouraged to leverage their approach. 
+                This would allow them to build a comprehensive topic representation not only from a single 
+                query but also from multiple queries within a session, and to use this insight to enhance 
+                their query prediction simulator.</p>
         </div>
         </div>
     </div>
