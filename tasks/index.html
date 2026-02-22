@@ -69,12 +69,40 @@
         <h4 class="task-card-title">Task 3. LongEval-USim: User Simulation</h4>
         <div class="task-hint">
         <div class="task-section">
-            <h5 class="task-section-title">Description</h5>
-            <p>Model user behaviors and query reformulations from CORE search sessions to predict the next query in a sequence.</p>
+            <h5 class="task-section-title">Task Description</h5>
+            <p>A central goal of the LongEval lab is to measure the performance of retrieval models over time. 
+                Other models, like user models, were not in focus. Like retrieval models, user models are not 
+                meant to be static and time-agnostic, although in practice, time and the evolution of retrieval 
+                environments are often ignored. Therefore, in Task 3, we aim to evaluate user models in 
+                longitudinal user simulations. </p>
+            <p>The core assignment in Subtask 3 is <strong>next query prediction</strong>. 
+                This task was previously introduced 
+                in the <a href="https://sim4ia.org/sigir2025/#micro-shared-task">Sim4IA micro shared task</a>. 
+                For LongEval, we focus on the longitudinal aspects of this user simulation task. The objective 
+                is to accurately predict the final query of a given session (which the organizers will withhold), 
+                based on the preceding interaction history and the best-fitting user simulator.</p>
+            <p>For each provided session, participants must submit up to 5 candidate queries, ranked by their 
+                likelihood of being the next query.</p> 
         </div>
         <div class="task-section">
             <h5 class="task-section-title">Data & setup</h5>
-            <p>Pre-filtered session log excerpts (search_id, uid, queries, SERPs, clicks). A pre-configured SimIIR v3 environment is provided for simulations; Task-2 topics may be used as context.</p>
+            <p>Participants will receive the sessions containing the following rich set of features:</p>
+            <ul>
+                <li>The sequence of queries submitted.</li>
+                <li>Timestamps for query submissions.</li>
+                <li>The top-10 SERP (Search Engine Results Page) retrieved for each query.</li>
+                <li>Which documents were clicked, along with their corresponding timestamps.</li>
+            </ul>
+            <p>The data will be provided in the following form:</p>
+            <pre>
+                Index, User Name, Session Number, Query String, Timestamp of Query Submission, SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"           
+            </pre>
+            <p>Session File Example:</p>
+            <pre>
+                1,test_user,1,cultural female genital mutilation,2025-01-10 20:55:48,"[49700987, 41108296, 70340641, 8872149, 151014331, 68561928, 122589791, 126475067, 70353000, 163079162]",4c17b92490816aea96cbcc112f222913,"[('122589791', datetime.datetime(2025, 1, 10, 20, 56, 10), 'works')]"
+                2,test_user,1,cultural female genital mutilation egypt,2025-01-10 20:57:03,"[107753778, 134385557, 134967534, 31315918, 15106563, 46676819, 45507658, 34140770, 62051567, 46753109]",de73be5d8bf71a6bc877615ebb29b447,"[('15106563', datetime.datetime(2025, 1, 10, 20, 57, 26), 'works')]"
+                3,test_user,1, ...
+            </pre>
         </div>
         <div class="task-section">
             <h5 class="task-section-title">Task</h5>
