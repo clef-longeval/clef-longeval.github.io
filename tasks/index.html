@@ -52,7 +52,9 @@
         <div class="task-hint">
         <div class="task-section">
             <h5 class="task-section-title">Description</h5>
-            <p>Extract TREC-style topics (query + description + narrative) from query logs to formalize the information need aligned with observed usage.</p>
+            <p>Offline evaluations of retrieval systems in the Cranfield Paradigm often formalize information needs into TREC-style topics that consist of a query (what searchers submit to the search engine), a description (what searchers actually mean), and a narrative (defining which documents are relevant or not).
+               When queries are extracted from query logs, none of those formalization exists which can reduce the reliability of an derived offline evaluation collection (because the subjectivity of relevance judgments is increased).
+               Task 2 of LongEval aims to extract TREC-style topics (query + description + narrative) from query logs to formalize the information need so that subsequent offline retrieval evaluaion corpora get more reliable relevance judgments.</p>
         </div>
         <div class="task-section">
             <h5 class="task-section-title">Data</h5>
@@ -60,7 +62,7 @@
         </div>
         <div class="task-section">
             <h5 class="task-section-title">Evaluation</h5>
-            <p>Assess topics on Alignment (agreement with click-log qrels), Distinguishability (ability to separate runs via nDCG) and Clarity (consistency across LLM annotations). Measure short- and long-term drops. Topics feed Task-3.</p>
+            <p>We will create relevance judgments for the generated TREC-style topics with large language model relevance assessors and will verify how well the created relevance judgments are aligned over time with the future query logs (agreement with click-log qrels), how well they can distinguish retrieval systems submitted to Task-1 (ability to separate runs via nDCG) and clarity (how consist are the annotations across different large language models). We will measure the short- and long-term drops of those aspects. We also envision to feed the created topics to Task-3.</p>
         </div>
         </div>
     </div>
