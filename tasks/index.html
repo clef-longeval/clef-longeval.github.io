@@ -25,105 +25,189 @@
         LongEval 2026 continues the Sci-Retrieval task from 2025 and introduces three new tasks: LongEval-TopEx
         (Topic Extraction), LongEval-USim (User Simulation), and LongEval-RAG (Retrieval-Augmented Generation).
         Short descriptions, data sources and evaluation procedures for each task appear below. To receive
-        announcements and participate in discussions, please subscribe to our <a href="https://groups.google.com/g/longeval">Google Group</a>
+        announcements and participate in discussions, please subscribe to our <a
+            href="https://groups.google.com/g/longeval">Google Group</a>
         or join the project Slack at <a href="https://longeval.slack.com">longeval.slack.com</a>.
     </p>
 
     <div class="task-card">
         <h4 class="task-card-title">Task 1. LongEval-Sci: Ad-Hoc Scientific Retrieval</h4>
         <div class="task-hint">
-        <div class="task-section">
-            <h5 class="task-section-title">Description</h5>
-            <p>Build IR systems that keep retrieval effectiveness over time as the scientific collection evolves. Submit runs on multiple time-stamped snapshots.</p>
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Data</h5>
-            <p>CORE documents and queries across multiple snapshots. Two training snapshots (e.g. 2024-11, 2025-01) and two test snapshots for short- and long-term persistence (~4M docs, ~1k queries).</p>
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Evaluation</h5>
-            <p>nDCG per snapshot; robustness across snapshots measured by Relative Improvement (RI), Delta Relative Improvement (DRI) and Effect Ratio (ER).</p>
-        </div>
+            <div class="task-section">
+
+                <h5 class="task-section-title">Description</h5>
+                <p>
+                    This task aims at answer fundamental questions on the robustness and the stability of retrieval
+                    systems against the evolution of the search scenario. The test collections for this year contain
+                    scientific publications acquired from the <a href="https://core.ac.uk/ ">CORE</a> collection of open
+                    access scholarly documents. LongEval focuses on two core
+                    questions:
+                </p>
+                <ul>
+                    <li>(1) How does a search engine behave as the collection of documents available to it evolves? Such
+                        a
+                        question is especially important for commercial systems, as the satisfaction of users is central
+                        to
+                        such systems.</li>
+
+                    <li>(2) When do we need to update an IR system as the collection of documents to be searched in
+                        changes? If we are able to assess the decrease in performance (if any) of a system on an
+                        evolving
+                        collection, we may then decide if the system needs to be updated
+                    </li>
+                </ul>
+                <p>
+                    In comparison to the previous year, we enlarged the snapshots to three months to account for the
+                    unique dynamics of scientific search. We provide three snapshots of a growing document corpus and
+                    ask participants to submit ad-hoc ranking systems, potentially with a focus on scientific search and
+                    temporal changes.
+                </p>
+            </div>
+            <div class="task-section">
+
+
+                <h5 class="task-section-title">Data and Submission</h5>
+
+                <p>
+                    We provide a dynamic test collection consisting of three snapshots, a train and test query set, and
+                    two pseudo qrel sets per snapshot. Additionally, after submission, LLM judgments will be created for
+                    pools from the submitted runs.</p>
+
+                <ul>
+
+                    <li>Train:</li>
+                    <ul>
+
+                        <li>100 Train queries</li>
+                        <li>Snapshot March to June 2025</li>
+                        <li>Pseudo Qrles (document click through rate and raw clicks)</li>
+                    </ul>
+
+                    <li>Test:</li>
+                    <ul>
+                        <li>1500 New Test queries</li>
+                        <li>Three Snapshots March to June 2025, July to August 2025, and September to November 2025</li>
+                        <li>Pseudo Qrles per snapshot (document click through rate and raw clicks)</li>
+                        <li>LLM judgments based on submission pools</li>
+                    </ul>
+                </ul>
+                <p>
+                    To access the queries, please use the <a
+                        href=https://github.com/clef-longeval/ir-datasets-longeval>ir-datasets-longeval
+                        integration</a> that is <a href="https://pypi.org/project/ir-datasets-longeval/">available on
+                        pypi</a> (we hope that this improves the ease <a href="https://arxiv.org/pdf/2509.17440">re-use
+                        of your code in longitudinal retrieval settings</a>.
+                    You can download the dataset directly from the TU Wien Data Repository.
+                </p>
+                <p> Submissions will be handled via <a href="https://www.tira.io/task-overview/longeval-2025">
+                        TIRA.io</a>.
+                    Please visit the TIRA task page and register. We highly encourage software submissions as it
+                    facilitates repeated executions over time. We provide submission templates for your convenience.
+                    However, TREC-style run file submissions are also welcome. For further information, please have a
+                    look at the <a href="https://github.com/clef-longeval/longeval-code/tree/main/clef25">GitHub
+                        Submission
+                        Guide</a>.
+                </p>
+            </div>
         </div>
     </div>
 
     <div class="task-card">
-        <h4 class="task-card-title">Task 2.  LongEval-TopEx: Topic Extraction From Query Logs</h4>
+        <h4 class="task-card-title">Task 2. LongEval-TopEx: Topic Extraction From Query Logs</h4>
         <div class="task-hint">
-        <div class="task-section">
-            <h5 class="task-section-title">Description</h5>
-            <p>Offline evaluations of retrieval systems in the Cranfield Paradigm often formalize information needs into TREC-style topics that consist of a query (what searchers submit to the search engine), a description (what searchers actually mean), and a narrative (defining which documents are relevant or not).
-               When queries are extracted from query logs, none of those formalization exists which can reduce the reliability of an derived offline evaluation collection (because the subjectivity of relevance judgments is increased).
-               Task 2 of LongEval aims to extract TREC-style topics (query + description + narrative) from query logs to formalize the information need so that subsequent offline retrieval evaluaion corpora get more reliable relevance judgments.</p>
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Data</h5>
-            <p>Training snapshot at time t; build a top-10 pool from Task-1 runs overlapping training queries and annotate with multiple LLM-based relevance assessors to obtain alternative qrels per topic.</p>
-            <p>For accessing the queries, please use the <a href="https://github.com/clef-longeval/ir-datasets-longeval">ir-datasets-longeval integration</a> that is <a href="https://pypi.org/project/ir-datasets-longeval/">available on pypi</a> (we hope that this improves the easy <a href="https://arxiv.org/pdf/2509.17440">re-use of your code in longitudinal retrieval settings</a>.)</p>
-            <p>We have a baseline ready that you can use as starting point. [<a href="https://github.com/clef-longeval/longeval-code/tree/main/clef26/topic-extraction/baseline">LLM Baseline</a>]</p>
+            <div class="task-section">
+                <h5 class="task-section-title">Description</h5>
+                <p>Offline evaluations of retrieval systems in the Cranfield Paradigm often formalize information needs
+                    into TREC-style topics that consist of a query (what searchers submit to the search engine), a
+                    description (what searchers actually mean), and a narrative (defining which documents are relevant
+                    or not).
+                    When queries are extracted from query logs, none of those formalization exists which can reduce the
+                    reliability of an derived offline evaluation collection (because the subjectivity of relevance
+                    judgments is increased).
+                    Task 2 of LongEval aims to extract TREC-style topics (query + description + narrative) from query
+                    logs to formalize the information need so that subsequent offline retrieval evaluaion corpora get
+                    more reliable relevance judgments.</p>
+            </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Data</h5>
+                <p>Training snapshot at time t; build a top-10 pool from Task-1 runs overlapping training queries and
+                    annotate with multiple LLM-based relevance assessors to obtain alternative qrels per topic.</p>
+                <p>For accessing the queries, please use the <a
+                        href="https://github.com/clef-longeval/ir-datasets-longeval">ir-datasets-longeval
+                        integration</a> that is <a href="https://pypi.org/project/ir-datasets-longeval/">available on
+                        pypi</a> (we hope that this improves the easy <a href="https://arxiv.org/pdf/2509.17440">re-use
+                        of your code in longitudinal retrieval settings</a>.)</p>
+                <p>We have a baseline ready that you can use as starting point. [<a
+                        href="https://github.com/clef-longeval/longeval-code/tree/main/clef26/topic-extraction/baseline">LLM
+                        Baseline</a>]</p>
 
-            
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Evaluation</h5>
-            <p>We will create relevance judgments for the generated TREC-style topics with large language model relevance assessors and will verify how well the created relevance judgments are aligned over time with the future query logs (agreement with click-log qrels), how well they can distinguish retrieval systems submitted to Task-1 (ability to separate runs via nDCG) and clarity (how consist are the annotations across different large language models). We will measure the short- and long-term drops of those aspects. We also envision to feed the created topics to Task-3.</p>
-        </div>
+
+            </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Evaluation</h5>
+                <p>We will create relevance judgments for the generated TREC-style topics with large language model
+                    relevance assessors and will verify how well the created relevance judgments are aligned over time
+                    with the future query logs (agreement with click-log qrels), how well they can distinguish retrieval
+                    systems submitted to Task-1 (ability to separate runs via nDCG) and clarity (how consist are the
+                    annotations across different large language models). We will measure the short- and long-term drops
+                    of those aspects. We also envision to feed the created topics to Task-3.</p>
+            </div>
         </div>
     </div>
 
     <div class="task-card">
         <h4 class="task-card-title">Task 3. LongEval-USim: User Simulation</h4>
         <div class="task-hint">
-        <div class="task-section">
-            <h5 class="task-section-title">Task Description</h5>
-            <p>A central goal of the LongEval lab is to measure the performance of retrieval models over time. 
-                Other models, like user models, were not in focus. Like retrieval models, user models are not 
-                meant to be static and time-agnostic, although in practice, time and the evolution of retrieval 
-                environments are often ignored. Therefore, in Task 3, we aim to evaluate user models in 
-                longitudinal user simulations. </p>
-            <p>The core assignment in Subtask 3 is <strong>next query prediction</strong>. 
-                This task was previously introduced 
-                in the <a href="https://sim4ia.org/sigir2025/#micro-shared-task">Sim4IA micro shared task</a>. 
-                For LongEval, we focus on the longitudinal aspects of this user simulation task. The objective 
-                is to accurately predict the final query of a given session (which the organizers will withhold), 
-                based on the preceding interaction history and the best-fitting user simulator.</p>
-            <p>For each provided session, participants must submit up to 5 candidate queries, ranked by their 
-                likelihood of being the next query.</p> 
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Data & setup</h5>
-            <p>Participants will receive the sessions containing the following rich set of features:</p>
-            <ul>
-                <li>The sequence of queries submitted.</li>
-                <li>Timestamps for query submissions.</li>
-                <li>The top-10 SERP (Search Engine Results Page) retrieved for each query.</li>
-                <li>Which documents were clicked, along with their corresponding timestamps.</li>
-            </ul>
-            <p>The data will be provided in the following form:</p>
-            <pre>
+            <div class="task-section">
+                <h5 class="task-section-title">Task Description</h5>
+                <p>A central goal of the LongEval lab is to measure the performance of retrieval models over time.
+                    Other models, like user models, were not in focus. Like retrieval models, user models are not
+                    meant to be static and time-agnostic, although in practice, time and the evolution of retrieval
+                    environments are often ignored. Therefore, in Task 3, we aim to evaluate user models in
+                    longitudinal user simulations. </p>
+                <p>The core assignment in Subtask 3 is <strong>next query prediction</strong>.
+                    This task was previously introduced
+                    in the <a href="https://sim4ia.org/sigir2025/#micro-shared-task">Sim4IA micro shared task</a>.
+                    For LongEval, we focus on the longitudinal aspects of this user simulation task. The objective
+                    is to accurately predict the final query of a given session (which the organizers will withhold),
+                    based on the preceding interaction history and the best-fitting user simulator.</p>
+                <p>For each provided session, participants must submit up to 5 candidate queries, ranked by their
+                    likelihood of being the next query.</p>
+            </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Data & setup</h5>
+                <p>Participants will receive the sessions containing the following rich set of features:</p>
+                <ul>
+                    <li>The sequence of queries submitted.</li>
+                    <li>Timestamps for query submissions.</li>
+                    <li>The top-10 SERP (Search Engine Results Page) retrieved for each query.</li>
+                    <li>Which documents were clicked, along with their corresponding timestamps.</li>
+                </ul>
+                <p>The data will be provided in the following form:</p>
+                <pre>
 Index, User Name, Session Number, Query String, Timestamp of Query Submission, 
 SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
-            <p>Session File Example:</p>
-            <pre>
+                <p>Session File Example:</p>
+                <pre>
 1,test_user,44,effects of media literacy on learning experience ,2025-02-08 15:54:49,"[213271, 8868621, 36996622, 77231420, 62528977, 44759354, 267373, 128496322, 256706, 256108]",4dd111537a7a8d21a1ca912fe1d611ad,"[('44759354', datetime.datetime(2025, 2, 8, 15, 55, 11), 'works')]" 
 2,test_user,44,media literacy skills,2025-02-08 15:55:11,"[156462828, 4762625, 84628214, 153245377, 155446828, 141526785, 43469067, 31614868, 62323511, 126958714]",73071860414ec67d0fc5f01d94884421,"[('62323511', datetime.datetime(2025, 2, 8, 15, 55, 33), 'works')]" 
-3,test_user,44, ...  </pre>            
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Submission Format</h5>
-            <p>For each implemented persona, submit a run file containing:</p>
-            <ul>
-                <li><strong>team_name</strong>: Can be freely chosen</li>
-                <li><strong>description</strong>: Provide a brief summary of the underlying approach. 
-                    This can be a link to a repository, a prompt definition, or anything that helps 
-                    explain your approach.</li>
-                <li><strong>run_name</strong>: Should be meaningful and align with the naming used in 
-                    your lab notes, though it can still be chosen individually.</li>
-            </ul>
-            <p>For each session, predict 5 diverse query candidates that remain semantically similar 
-                to the original query. Rank them in descending order of confidence.</p>
-            <p>Run file example:</p>
-            <pre>
+3,test_user,44, ...  </pre>
+            </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Submission Format</h5>
+                <p>For each implemented persona, submit a run file containing:</p>
+                <ul>
+                    <li><strong>team_name</strong>: Can be freely chosen</li>
+                    <li><strong>description</strong>: Provide a brief summary of the underlying approach.
+                        This can be a link to a repository, a prompt definition, or anything that helps
+                        explain your approach.</li>
+                    <li><strong>run_name</strong>: Should be meaningful and align with the naming used in
+                        your lab notes, though it can still be chosen individually.</li>
+                </ul>
+                <p>For each session, predict 5 diverse query candidates that remain semantically similar
+                    to the original query. Rank them in descending order of confidence.</p>
+                <p>Run file example:</p>
+                <pre>
 {
   "meta": {
     "team_name": "",
@@ -135,73 +219,99 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
   "...": [ "Q1", "Q2", "Q3", "Q4", "Q5" ],
   "45": [ "Q1", "Q2", "Q3", "Q4", "Q5" ]
 }</pre>
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Evaluation</h5>
-            <p>We will evaluate the query candidates based on semantic similarity to the original, withheld 
-                query, and the redundancy among the candidates themselves. We will use the Rank-Diversity Score (RDS) 
-                from the <a href="https://arxiv.org/pdf/2511.09329">Sim4IA-Bench suite</a>.
-            <p>We will measure differences in RDS across snapshots. At the end, we would like to see which user 
-                simulation or user modeling approach was most successful across the available snapshots. </p>
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Starting Points, Framework, and Synergies</h5>
-            <p>To ensure an easy start, we offer an adapted version of the SimIIR 3.0 Framework, including 
-                sample simulators and video tutorials. However, the choice of framework remains entirely up 
-                to the participants.</p>
-            <p>For constructing the user simulator that performs the next-query prediction, we encourage 
-                participants not only to effectively leverage all provided signals but also to integrate 
-                supplementary or self-engineered features to enhance their simulator's predictive power. 
-                Feel free to try out strategies like personas or specific user attributes (e.g., degree, 
-                research field, or preferred interaction style). Different initial ideas can be drawn from 
-                the <a href="https://zenodo.org/communities/sim4ia_workshop_2025/records?q=&l=list&p=1&s=10&sort=newest">results of the Sim4IA Micro Shared Task 2025</a>.</p> 
-            <p>We will not provide topic descriptions for the sessions or direct relevance judgments, 
-                although inputs and overlaps from previous tasks are especially welcome. Participants 
-                engaged in Subtask 2 ("Topic Generation") are strongly encouraged to leverage their approach. 
-                This would allow them to build a comprehensive topic representation not only from a single 
-                query but also from multiple queries within a session, and to use this insight to enhance 
-                their query prediction simulator.</p>
-        </div>
+            </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Evaluation</h5>
+                <p>We will evaluate the query candidates based on semantic similarity to the original, withheld
+                    query, and the redundancy among the candidates themselves. We will use the Rank-Diversity Score
+                    (RDS)
+                    from the <a href="https://arxiv.org/pdf/2511.09329">Sim4IA-Bench suite</a>.
+                <p>We will measure differences in RDS across snapshots. At the end, we would like to see which user
+                    simulation or user modeling approach was most successful across the available snapshots. </p>
+            </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Starting Points, Framework, and Synergies</h5>
+                <p>To ensure an easy start, we offer an adapted version of the SimIIR 3.0 Framework, including
+                    sample simulators and video tutorials. However, the choice of framework remains entirely up
+                    to the participants.</p>
+                <p>For constructing the user simulator that performs the next-query prediction, we encourage
+                    participants not only to effectively leverage all provided signals but also to integrate
+                    supplementary or self-engineered features to enhance their simulator's predictive power.
+                    Feel free to try out strategies like personas or specific user attributes (e.g., degree,
+                    research field, or preferred interaction style). Different initial ideas can be drawn from
+                    the <a
+                        href="https://zenodo.org/communities/sim4ia_workshop_2025/records?q=&l=list&p=1&s=10&sort=newest">results
+                        of the Sim4IA Micro Shared Task 2025</a>.</p>
+                <p>We will not provide topic descriptions for the sessions or direct relevance judgments,
+                    although inputs and overlaps from previous tasks are especially welcome. Participants
+                    engaged in Subtask 2 ("Topic Generation") are strongly encouraged to leverage their approach.
+                    This would allow them to build a comprehensive topic representation not only from a single
+                    query but also from multiple queries within a session, and to use this insight to enhance
+                    their query prediction simulator.</p>
+            </div>
         </div>
     </div>
 
     <div class="task-card">
         <h4 class="task-card-title">Task 4. LongEval-RAG: Retrieval Augmented Generation (RAG)</h4>
         <div class="task-hint">
-        <div class="task-section">
-            <h5 class="task-section-title">Description & data</h5>
-            <p>The Task 4 aims at studying to which extent does RAGs cope with  evolution of scientific knowledge in time.  Do to that, we provide the task participants a dataset composed  
-            of two parts:<br>
-            i) A textual query (along with its query id) for which the  participating system has to provide textual answer; <br>  
-            ii) A set of document ids, mined from the corpus, on which the answer generation for particular query  must be solely  based (this set may be seen as a first stage filtering in a RAG system). This set of document is not expected to be composed  only of relevant documents to the query, but it also contains some relevant documents. The provided documents will be a part of the dataset provided within the Task 1. </p> 
-            
-            <p>The problem that has to be solved by the participants of this task is to provide (based on the query and the list of provided documents):<br>
-            a) The generated answer using the extracts of documents in part b) below. <br>
-            b) the document extracts that are relevant to the query (text extracted from the textual content of the documents provided in ii), using the contents from the LongEval 2026 corpus).</p>
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Submission</h5>
-            <p>For the submission of participants runs:<br>
-            The responses for the part a) will be submitted as a string corresponding to the generated answer: (query_id, answer) <br>
-            The responses for the part b) will be submitted as a set of pairs (maximum 5): <br>   
-            (query_id, {document extract}) : where a document extract is a character string considered to be relevant by the participant for the query. As several extracts may be defined, a run will contain a set of extracts.<br> 
-            The examples of an exact submission format and 3 training queries (based on the 2025 dataset) will be provided by the end of February.</p>  
-            <p>Overall, each submitted run is a zip file composed of  three text files, one for the a) for all queries, one for b) for all queries, and one file "description.txt" that shortly describes the submitted system. The name of the zip file will be used as the run name during the evaluation process.<br>  
-            A maximum of 3 runs may be submitted by each participating team.</p>
-            <p>Example of task 4 query (based on the 2025 dataset):<br>  
-            - Query_id: 00005<br>
-            - Query: "What operation dominates the cost of homomorphic AES evaluation, and how can hardware architectures reduce its impact?" <br>
-            - Docs_id: {7964767, 66637364, 42856664, 31316619, 19943691, 19531678,156069243, 156069094, 150704088, 141753453} <br>
-            </p>
-            <p>The result for this query:<br>
-            - Part a: (query_id: 00005, answer: "Large-degree polynomial multiplication dominates the cost of homomorphic AES evaluation. Hardware architectures reduce its impact by decomposing coefficients using CRT, performing fast NTT-based multiplications in parallel, and minimizing modular conversion overhead through optimized arithmetic pipelines.")  <br>
-            - Part b: (query_id: 00005, extracts: {"Polynomial multiplication dominates AES evaluation cost."", "Hardware mitigation via CRT + NTT +  optimized modular arithmetic."})
-            </p>
-        </div>
-        <div class="task-section">
-            <h5 class="task-section-title">Evaluation</h5>
-            <p> The evaluation of a) will be done using classical text generation evaluation measure, such as ROUGE or BERTscore. The evaluation of b) will be done using the computation of the overlap (e.g. Lenvenshtein distance) between the manually assessed  relevant extracts and the retrieved parts.  </p>
-        </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Description & data</h5>
+                <p>The Task 4 aims at studying to which extent does RAGs cope with evolution of scientific knowledge in
+                    time. Do to that, we provide the task participants a dataset composed
+                    of two parts:<br>
+                    i) A textual query (along with its query id) for which the participating system has to provide
+                    textual answer; <br>
+                    ii) A set of document ids, mined from the corpus, on which the answer generation for particular
+                    query must be solely  based (this set may be seen as a first stage filtering in a RAG system). This
+                    set of document is not expected to be composed only of relevant documents to the query, but it also
+                    contains some relevant documents. The provided documents will be a part of the dataset provided
+                    within the Task 1. </p>
+
+                <p>The problem that has to be solved by the participants of this task is to provide (based on the query
+                    and the list of provided documents):<br>
+                    a) The generated answer using the extracts of documents in part b) below. <br>
+                    b) the document extracts that are relevant to the query (text extracted from the textual content of
+                    the documents provided in ii), using the contents from the LongEval 2026 corpus).</p>
+            </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Submission</h5>
+                <p>For the submission of participants runs:<br>
+                    The responses for the part a) will be submitted as a string corresponding to the generated answer:
+                    (query_id, answer) <br>
+                    The responses for the part b) will be submitted as a set of pairs (maximum 5): <br>
+                    (query_id, {document extract}) : where a document extract is a character string considered to be
+                    relevant by the participant for the query. As several extracts may be defined, a run will contain a
+                    set of extracts.<br>
+                    The examples of an exact submission format and 3 training queries (based on the 2025 dataset) will
+                    be provided by the end of February.</p>
+                <p>Overall, each submitted run is a zip file composed of three text files, one for the a) for all
+                    queries, one for b) for all queries, and one file "description.txt" that shortly describes the
+                    submitted system. The name of the zip file will be used as the run name during the evaluation
+                    process.<br>
+                    A maximum of 3 runs may be submitted by each participating team.</p>
+                <p>Example of task 4 query (based on the 2025 dataset):<br>
+                    - Query_id: 00005<br>
+                    - Query: "What operation dominates the cost of homomorphic AES evaluation, and how can hardware
+                    architectures reduce its impact?" <br>
+                    - Docs_id: {7964767, 66637364, 42856664, 31316619, 19943691, 19531678,156069243, 156069094,
+                    150704088, 141753453} <br>
+                </p>
+                <p>The result for this query:<br>
+                    - Part a: (query_id: 00005, answer: "Large-degree polynomial multiplication dominates the cost of
+                    homomorphic AES evaluation. Hardware architectures reduce its impact by decomposing coefficients
+                    using CRT, performing fast NTT-based multiplications in parallel, and minimizing modular conversion
+                    overhead through optimized arithmetic pipelines.") <br>
+                    - Part b: (query_id: 00005, extracts: {"Polynomial multiplication dominates AES evaluation cost."",
+                    "Hardware mitigation via CRT + NTT + optimized modular arithmetic."})
+                </p>
+            </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Evaluation</h5>
+                <p> The evaluation of a) will be done using classical text generation evaluation measure, such as ROUGE
+                    or BERTscore. The evaluation of b) will be done using the computation of the overlap (e.g.
+                    Lenvenshtein distance) between the manually assessed relevant extracts and the retrieved parts. </p>
+            </div>
         </div>
     </div>
 
