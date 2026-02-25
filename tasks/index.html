@@ -125,22 +125,31 @@
                     reliability of an derived offline evaluation collection (because the subjectivity of relevance
                     judgments is increased).
                     Task 2 of LongEval aims to extract TREC-style topics (query + description + narrative) from query
-                    logs to formalize the information need so that subsequent offline retrieval evaluaion corpora get
+                    logs to formalize the information need so that subsequent offline retrieval evalutaion corpora get
                     more reliable relevance judgments.</p>
+
+                <h5 class="task-section-title">Baselines</h5>
+                <p>We have created two baselines (one with an LLM, one that injects the query into a predefined template) that you can use as starting point in the <a href="https://github.com/clef-longeval/longeval-code/tree/main/clef26/topic-extraction#baselines">longeval-code repository</a>
+                </p>
+                
             </div>
             <div class="task-section">
                 <h5 class="task-section-title">Data</h5>
-                <p>Training snapshot at time t; build a top-10 pool from Task-1 runs overlapping training queries and
-                    annotate with multiple LLM-based relevance assessors to obtain alternative qrels per topic.</p>
-                <p>For accessing the queries, please use the <a
-                        href="https://github.com/clef-longeval/ir-datasets-longeval">ir-datasets-longeval
-                        integration</a> that is <a href="https://pypi.org/project/ir-datasets-longeval/">available on
-                        pypi</a> (we hope that this improves the easy <a href="https://arxiv.org/pdf/2509.17440">re-use
-                        of your code in longitudinal retrieval settings</a>.)</p>
-                <p>We have a baseline ready that you can use as starting point. [<a
-                        href="https://github.com/clef-longeval/longeval-code/tree/main/clef26/topic-extraction/baseline">LLM
-                        Baseline</a>]</p>
+                <p>We use the test queries for Task-1. I.e., approaches should generate a topic for each test query of Task-1. For accessing the queries, please use the <a
+                        href="https://github.com/clef-longeval/ir-datasets-longeval">LongEval ir_datasets extension</a> that is <a href="https://pypi.org/project/ir-datasets-longeval/">available on
+                        pypi</a> (we hope that this improves the <a href="https://arxiv.org/pdf/2509.17440">simplified re-use
+                        of your code in longitudinal retrieval settings</a>.)
+                </p>We require that topics are generated in .jsonl format (please have a look at the <a href="https://github.com/clef-longeval/longeval-code/tree/main/clef26/topic-extraction#baselines">baselines</a> for more details).
+                Every line should have the fields qid, query, description, and narrative with:
+                <ul>
+                    <li><strong>qid</strong>: The ID of the query.</li>
+                    <li><strong>query</strong>: The original query.</li>
+                    <li><strong>description</strong>: The generated description for the information need, i.e., what searchers for this topic had in their mind.</li>
+                    <li><strong>narrative</strong>: The generated narrative for the information need, i.e., specifiyng which documents will be relevant or which will be not relevant.</li>
+                </ul>
 
+                For instance, for the query "ransomware detection" with id "1" from the spot-check dataset, a valid output could look like:
+                    <pre>{"qid": "1", "query": "ransomware detection", "description": "I want to know which algorithms for ransomware detection are effective.", "narrative": "Papers that describe algorithms for ransomware detection are relevant when they also have an evaluation. Evaluation papers that just compare multiple ransomware detection algorithms are also relevant. Other aspects, such as describing which ransomware attacks exist, the history of ransomware detection, etc., are not relevant."}</pre>
 
             </div>
             <div class="task-section">
