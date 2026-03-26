@@ -63,17 +63,18 @@
                     temporal changes.
                 </p>
             </div>
+            <h5 class="task-section-title">Baselines</h5>
+                <p>We have created two baselines (BM25 and Qwen3-Embedding-4B) that you can use as starting point in the <a href="https://github.com/clef-longeval/longeval-code/tree/main/clef26/scientific-retrieval">longeval-code repository</a>. 
+                </p>
+            </div>
+
             <div class="task-section">
-
-
-                <h5 class="task-section-title">Data and Submission</h5>
-
+                <h5 class="task-section-title">Data</h5>
                 <p>
                     We provide a dynamic test collection consisting of three snapshots, a train and test query set, and
                     two pseudo qrel sets per snapshot. Additionally, after submission, LLM judgments will be created for
                     pools from the submitted runs.</p>
 
-                
                     Train:
                     <ul>
                         <li>- 100 Train queries</li>
@@ -96,6 +97,13 @@
                         of your code in longitudinal retrieval settings</a>.
                     You can download the dataset directly from the TU Wien Data Repository.
                 </p>
+                <p>
+                    We provide citation data for the scientific documents. We share a <a href="https://th-koeln.sciebo.de/s/SMyiLZt7ZCjKC5k">filtered OpenCitations Index</a> (password: longeval) file that contains citation triplets, the timestamp, and additionally a mapping from the OMID to the CORE document ID. When using the citation data, please ensure that the citations match the snapshot. 
+                
+                </p>
+            </div>
+            <div class="task-section">
+                <h5 class="task-section-title">Submission</h5>
                 <p> Submissions will be handled via <a href="https://www.tira.io/task-overview/longeval-2026">
                         TIRA.io</a>.
                     Please visit the TIRA task page and register. We highly encourage software submissions as it
