@@ -303,40 +303,66 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
 
                 <p>The problem that has to be solved by the participants of this task is to provide (based on the query
                     and the list of provided documents):<br>
-                    a) The generated answer using the extracts of documents in part b) below. <br>
+                    a) The generated answer in the [TREC RAG run format](https://github.com/hltcoe/rag-run-validator). <br>
                     b) the document extracts that are relevant to the query (text extracted from the textual content of
                     the documents provided in ii), using the contents from the LongEval 2026 corpus).</p>
             </div>
+
+
+            <div class="task-section">
+            
+                <h5 class="task-section-title">Baselines</h5>
+                <p>We have created two baselines (one with an LLM, one that just concatenates the responses)
+                    that you can use as starting point in the <a href="https://github.com/clef-longeval/longeval-code/tree/main/clef26/rag">longeval-code repository</a>.
+                </p>
+            </div>
+
             <div class="task-section">
                 <h5 class="task-section-title">Submission</h5>
-                <p>For the submission of participants runs:<br>
-                    The responses for the part a) will be submitted as a string corresponding to the generated answer:
-                    (query_id, answer) <br>
-                    The responses for the part b) will be submitted as a set of pairs (maximum 5): <br>
-                    (query_id, {document extract}) : where a document extract is a character string considered to be
-                    relevant by the participant for the query. As several extracts may be defined, a run will contain a
-                    set of extracts.<br>
-                    The examples of an exact submission format and 3 training queries (based on the 2025 dataset) will
-                    be provided by the end of February.</p>
-                <p>Overall, each submitted run is a zip file composed of three text files, one for the a) for all
-                    queries, one for b) for all queries, and one file "description.txt" that shortly describes the
-                    submitted system. The name of the zip file will be used as the run name during the evaluation
-                    process.<br>
-                    A maximum of 3 runs may be submitted by each participating team.</p>
-                <p>Example of task 4 query (based on the 2025 dataset):<br>
-                    - Query_id: 00005<br>
-                    - Query: "What operation dominates the cost of homomorphic AES evaluation, and how can hardware
-                    architectures reduce its impact?" <br>
-                    - Docs_id: {7964767, 66637364, 42856664, 31316619, 19943691, 19531678,156069243, 156069094,
-                    150704088, 141753453} <br>
-                </p>
-                <p>The result for this query:<br>
-                    - Part a: (query_id: 00005, answer: "Large-degree polynomial multiplication dominates the cost of
-                    homomorphic AES evaluation. Hardware architectures reduce its impact by decomposing coefficients
-                    using CRT, performing fast NTT-based multiplications in parallel, and minimizing modular conversion
-                    overhead through optimized arithmetic pipelines.") <br>
-                    - Part b: (query_id: 00005, extracts: {"Polynomial multiplication dominates AES evaluation cost."",
-                    "Hardware mitigation via CRT + NTT + optimized modular arithmetic."})
+                
+                <p>Submissions will be handled via <a href="https://www.tira.io/task-overview/longeval-2026">TIRA.io</a>.
+                    Please visit the <a href="https://www.tira.io/task-overview/longeval-2026">TIRA task page and register</a>.
+                    We accept both uploads of generated topics as well as code submissions.
+                
+                The runs must be submitted in the TREC RAG run format in jsonl. Every line should have the fields metadata, references, and answer with:
+                <ul>
+                    <li><strong>metadata</strong>: having the team_id, the run_id, the type, and the narrative_id (which is the query).</li>
+                    <li><strong>references</strong>: is the list of documents that you cite in your response.</li>
+                    <li><strong>answer</strong>: Contains the texts that each potentially contain references. Please segment your text in a way that the references are valid for the text, e.g., you can segment by sentences.</li>
+                </ul>
+
+                For instance, for the query "What operation dominates the cost of homomorphic AES evaluation, and how can hardware architectures reduce its impact?" with id "4" from the 2025 dataset, a line could liik like:<pre>{
+    "metadata": {
+        "team_id": "organizer",
+        "run_id": "fs_rank-qwen3-32b_ag-qwen3-32b",
+        "type": "automatic",
+        "narrative_id": "4",
+        "narrative": "What operation dominates the cost of homomorphic AES evaluation, and how can hardware architectures reduce its impact?"
+    },
+    "references": [
+        7964767, 
+        66637364, 
+        42856664, 
+        31316619, 
+        19943691, 
+        19531678,
+        156069243, 
+        156069094, 
+        150704088, 
+        141753453
+    ],
+    "answer": [
+        {
+            "text": "Large-degree polynomial multiplication dominates the cost of homomorphic AES evaluation. Hardware architectures reduce its impact by decomposing coefficients using CRT, performing fast NTT-based multiplications in parallel, and minimizing modular conversion overhead through optimized arithmetic pipelines",
+            "citations": [
+                3,
+                5
+            ]
+        }
+    ]
+}</pre>
+                
+                
                 </p>
             </div>
             <div class="task-section">
