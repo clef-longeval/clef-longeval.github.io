@@ -304,8 +304,7 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
                 <p>The problem that has to be solved by the participants of this task is to provide (based on the query
                     and the list of provided documents):<br>
                     a) The generated answer in the [TREC RAG run format](https://github.com/hltcoe/rag-run-validator). <br>
-                    b) the document extracts that are relevant to the query (text extracted from the textual content of
-                    the documents provided in ii), using the contents from the LongEval 2026 corpus).</p>
+                    b) The documents that were used to generate the answer to the query (out of the documents provided in ii).</p>
             </div>
 
 
@@ -326,12 +325,12 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
                 
                 The runs must be submitted in the TREC RAG run format in jsonl. Every line should have the fields metadata, references, and answer with:
                 <ul>
-                    <li><strong>metadata</strong>: having the team_id, the run_id, the type, and the narrative_id (which is the query).</li>
-                    <li><strong>references</strong>: is the list of documents that you cite in your response.</li>
-                    <li><strong>answer</strong>: Contains the texts that each potentially contain references. Please segment your text in a way that the references are valid for the text, e.g., you can segment by sentences.</li>
+                    <li><strong>metadata</strong>: having the team_id, the run_id, the type, narrative (which is the query) and the narrative_id (i.e. the unique query id).</li>
+                    <li><strong>references</strong>: is the list of documents that you cite in your response. These are the 10 candidate documents provided to generate the answer.</li>
+                    <li><strong>answer</strong>: which provides your output for substasks a) and b). It consists of the <b>text</b> (the generated answer to the question/narrative, based on the referenced documents) and <b>citations</b> (indices pointing to which documents in the references list were actually used to support the answer). </li>
                 </ul>
 
-                For instance, for the query "What operation dominates the cost of homomorphic AES evaluation, and how can hardware architectures reduce its impact?" with id "4" from the 2025 dataset, a line could liik like:<pre>{
+                For instance, for the query "What operation dominates the cost of homomorphic AES evaluation, and how can hardware architectures reduce its impact?" with id "4" from the 2025 dataset, on output line could look as follows:<pre>{
     "metadata": {
         "team_id": "organizer",
         "run_id": "fs_rank-qwen3-32b_ag-qwen3-32b",
@@ -361,15 +360,16 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
         }
     ]
 }</pre>
-                
+
+                The participants need to also provide a description of each submitted system. This needs to be provided as a yaml file.
                 
                 </p>
             </div>
             <div class="task-section">
                 <h5 class="task-section-title">Evaluation</h5>
                 <p> The evaluation of a) will be done using classical text generation evaluation measure, such as ROUGE
-                    or BERTscore. The evaluation of b) will be done using the computation of the overlap (e.g.
-                    Lenvenshtein distance) between the manually assessed relevant extracts and the retrieved parts. </p>
+                    or BERTscore. Apart from this, we plan to run LLM-as-a-judge evaluation. The evaluation of b) will be done using the computation of the overlap (e.g.
+                    done using set overlap precision and recall between the files used to generate the answer and the ground truth files. </p>
             </div>
         </div>
     </div>
