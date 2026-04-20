@@ -293,7 +293,7 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
                 <p>The Task 4 aims at studying to which extent does RAGs cope with evolution of scientific knowledge in
                     time. Do to that, we provide the task participants a dataset composed
                     of two parts:<br>
-                    i) A textual query (along with its query id) for which the participating system has to provide
+                    i) A textual query (along with its query id) for which the participating system provide a
                     textual answer; <br>
                     ii) A set of document ids, mined from the corpus, on which the answer generation for particular
                     query must be solely  based (this set may be seen as a first stage filtering in a RAG system). This
@@ -301,10 +301,7 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
                     contains some relevant documents. The provided documents will be a part of the dataset provided
                     within the Task 1. </p>
 
-                <p>The problem that has to be solved by the participants of this task is to provide (based on the query
-                    and the list of provided documents):<br>
-                    a) The generated answer in the [TREC RAG run format](https://github.com/hltcoe/rag-run-validator). <br>
-                    b) The documents that were used to generate the answer to the query (out of the documents provided in ii).</p>
+                <p>Participants should generate a generated answer in the [TREC RAG run format](https://github.com/hltcoe/rag-run-validator) that contains links to the referenced documents that were used to generate the answer (out of the documents provided in ii).</p>
                 
                 <p>To acquire the queries, please use the <a href=https://github.com/clef-longeval/ir-datasets-longeval>ir-datasets-longeval
                         integration</a> that is <a href="https://pypi.org/project/ir-datasets-longeval/">available on
@@ -338,7 +335,7 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
                 <ul>
                     <li><strong>metadata</strong>: having the team_id, the run_id, the type, narrative (which is the query) and the narrative_id (i.e. the unique query id).</li>
                     <li><strong>references</strong>: is the list of documents that you cite in your response. These are the 10 candidate documents provided to generate the answer.</li>
-                    <li><strong>answer</strong>: which provides your output for substasks a) and b). It consists of the <b>text</b> (the generated answer to the question/narrative, based on the referenced documents) and <b>citations</b> (indices pointing to which documents in the references list were actually used to support the answer). </li>
+                    <li><strong>answer</strong>: which provides the output of your system to the query. It consists of the <b>text</b> (the generated answer to the question/narrative, based on the referenced documents) and <b>citations</b> (indices pointing to which documents in the references list were actually used to support the answer). </li>
                 </ul>
 
                 For instance, for the query "What operation dominates the cost of homomorphic AES evaluation, and how can hardware architectures reduce its impact?" with id "4" from the 2025 dataset, on output line could look as follows:<pre>{
@@ -379,8 +376,7 @@ SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
             <div class="task-section">
                 <h5 class="task-section-title">Evaluation</h5>
                 <p> The evaluation of a) will be done using classical text generation evaluation measure, such as ROUGE
-                    or BERTscore. Apart from this, we plan to run LLM-as-a-judge evaluation. The evaluation of b) will be done using the computation of the overlap (e.g.
-                    done using set overlap precision and recall between the files used to generate the answer and the ground truth files. </p>
+                    or BERTscore. Apart from this, we plan to run LLM-as-a-judge evaluation. The evaluation of b) will be done using the computation of the overlap (e.g. done using set overlap precision and recall between the files used to generate the answer and the ground truth files. </p>
             </div>
         </div>
     </div>
