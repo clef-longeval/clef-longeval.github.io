@@ -214,21 +214,30 @@
                     <li>The sequence of queries submitted.</li>
                     <li>Timestamps for query submissions.</li>
                     <li>The top-10 SERP (Search Engine Results Page) retrieved for each query.</li>
-                    <li>Which documents were clicked, along with their corresponding timestamps.</li>
+                    <li>Which documents were clicked.</li>
                 </ul>
                 <p>The data will be provided in the following form:</p>
                 <pre>
 Index, User Name, Session Number, Query String, Timestamp of Query Submission, 
-SERP, SearchID, "[('DocId', Time of Click, Type of Click)]"</pre>
+SERP, SearchID, "[('DocId', Type of Click)]"</pre>
                 <p>Session File Example:</p>
                 <pre>
-1,test_user,44,effects of media literacy on learning experience ,2025-02-08 15:54:49,"[213271, 8868621, 36996622, 77231420, 62528977, 44759354, 267373, 128496322, 256706, 256108]",4dd111537a7a8d21a1ca912fe1d611ad,"[('44759354', datetime.datetime(2025, 2, 8, 15, 55, 11), 'works')]" 
-2,test_user,44,media literacy skills,2025-02-08 15:55:11,"[156462828, 4762625, 84628214, 153245377, 155446828, 141526785, 43469067, 31614868, 62323511, 126958714]",73071860414ec67d0fc5f01d94884421,"[('62323511', datetime.datetime(2025, 2, 8, 15, 55, 33), 'works')]" 
+1,test_user,44,effects of media literacy on learning experience ,2025-02-08 15:54:49,"[213271, 8868621, 36996622, 77231420, 62528977, 44759354, 267373, 128496322, 256706, 256108]",4dd111537a7a8d21a1ca912fe1d611ad,"[('44759354', 'works')]" 
+2,test_user,44,media literacy skills,2025-02-08 15:55:11,"[156462828, 4762625, 84628214, 153245377, 155446828, 141526785, 43469067, 31614868, 62323511, 126958714]",73071860414ec67d0fc5f01d94884421,"[('62323511', 'works')]" 
 3,test_user,44, ...  </pre>
             </div>
             <div class="task-section">
-                <h5 class="task-section-title">Submission Format</h5>
-                <p>For each implemented persona, submit a run file containing:</p>
+                <h5 class="task-section-title">Submission and Submission Format</h5>
+                <p>Submissions will be handled via <a href="https://www.tira.io/task-overview/longeval-2026">TIRA.io</a>. Please visit the <a href="https://www.tira.io/task-overview/longeval-2026">TIRA task page</a> and register.
+                    For Subtask 3, we only accept run submissions. However, we encourage you to include a link to your GitHub repository in your run file under "Description".
+                    For the submission, please provide the results of your approach for both test datasets as well as for the training dataset. 
+                    Note that for the training dataset, the last query in each session should not be used for prediction, as it contains the ground truth. 
+                    The naming convention is as follows: <code>snapshot-1.jsonl</code> must contain the training results, while <code>snapshot-2.jsonl</code> and <code>snapshot-3.jsonl</code> must contain the results for the two test datasets. 
+                    Specifically, <code>snapshot-2.jsonl</code> must correspond to <code>task3_longeval_usim-sessions-06-08_2025.csv</code>, and <code>snapshot-3.jsonl</code> must correspond to <code>task3_longeval_usim-sessions-09-11_2025.csv</code>.
+                </p>
+                
+                <p>In the following, we describe the expected submission file format.</p>
+                
                 <ul>
                     <li><strong>team_name</strong>: Can be freely chosen</li>
                     <li><strong>description</strong>: Provide a brief summary of the underlying approach.
