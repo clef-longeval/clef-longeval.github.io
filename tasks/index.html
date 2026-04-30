@@ -344,7 +344,7 @@ SERP, SearchID, "[('DocId', Type of Click)]"</pre>
                 <ul>
                     <li><strong>metadata</strong>: having the team_id, the run_id, the type, narrative (which is the query) and the narrative_id (i.e. the unique query id).</li>
                     <li><strong>references</strong>: is the list of documents that you cite in your response. These are the 10 candidate documents provided to generate the answer.</li>
-                    <li><strong>answer</strong>: which provides the output of your system to the query. It consists of the <b>text</b> (the generated answer to the question/narrative, based on the referenced documents) and <b>citations</b> (indices pointing to which documents in the references list were actually used to support the answer). </li>
+                    <li><strong>answer</strong>: which provides the output of your system to the query. It consists of the <b>text</b> (the generated answer to the question/narrative, based on the referenced documents) and <b>citations</b> (Indices pointing to which documents in the references list were actually used to support the answer. Indicies start from 0.). </li>
                 </ul>
 
                 For instance, for the query "What operation dominates the cost of homomorphic AES evaluation, and how can hardware architectures reduce its impact?" with id "4" from the 2025 dataset, on output line could look as follows:<pre>{
