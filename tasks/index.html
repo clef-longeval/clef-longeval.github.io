@@ -231,7 +231,8 @@ SERP, SearchID, "[('DocId', Type of Click)]"</pre>
                 <p>Submissions will be handled via <a href="https://www.tira.io/task-overview/longeval-2026">TIRA.io</a>. Please visit the <a href="https://www.tira.io/task-overview/longeval-2026">TIRA task page</a> and register.
                     For Subtask 3, we only accept run submissions. However, we encourage you to include a link to your GitHub repository in your run file under "Description".
                     For the submission, please provide the results of your approach for both test datasets as well as for the training dataset. 
-                    Note that for the training dataset, the last query in each session should not be used for prediction, as it contains the ground truth. 
+                    Note that for the training dataset, the last query in each session should not be used for prediction, as it contains the ground truth.
+                    In the UI of TIRA, please upload your submission as a zip file containing three files <code>snapshot-1.jsonl</code>, <code>snapshot-2.jsonl</code>, and <code>snapshot-3.jsonl</code>.
                     The naming convention is as follows: <code>snapshot-1.jsonl</code> must contain the training results, while <code>snapshot-2.jsonl</code> and <code>snapshot-3.jsonl</code> must contain the results for the two test datasets. 
                     Specifically, <code>snapshot-2.jsonl</code> must correspond to <code>task3_longeval_usim-sessions-06-08_2025.csv</code>, and <code>snapshot-3.jsonl</code> must correspond to <code>task3_longeval_usim-sessions-09-11_2025.csv</code>.
                 </p>
@@ -339,6 +340,7 @@ SERP, SearchID, "[('DocId', Type of Click)]"</pre>
                 <p>Submissions will be handled via <a href="https://www.tira.io/task-overview/longeval-2026">TIRA.io</a>.
                     Please visit the <a href="https://www.tira.io/task-overview/longeval-2026">TIRA task page and register</a>.
                     We accept both uploads of generated topics as well as code submissions.
+                    In the UI of TIRA, please upload your submission as a zip file containing two files <code>responses.jsonl</code> and <code>ir-metadata.yml</code>.
                 
                 The runs must be submitted in the TREC RAG run format in jsonl. Every line should have the fields metadata, references, and answer with:
                 <ul>
